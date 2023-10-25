@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter Semi Bold", sans-serif;
+}
+
+body {
+  background-color: #2D2E35;
+  color: #FFFFF8;
+}
+
+.App {
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 300px;
+  width: 100%;
+}
+
+.page {
+  padding: 48px 400px 0 400px;
+  min-height: calc(100vh - 80px);
+}

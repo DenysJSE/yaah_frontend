@@ -1,0 +1,148 @@
+/* SideBar */
+.sidebar {
+  width: 300px;
+  padding: 0 16px;
+  background-color: #1A1D1F;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-right: 2px solid #393A41;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 16px;
+}
+
+.logo-image {
+  width: 48px;
+}
+
+.logo-title {
+  margin-left: 4px;
+  font-size: 40px;
+}
+
+.sidebar-line {
+  margin: auto;
+  height: 3px;
+  border: none;
+  background-color: #23272A;
+  border-radius: 10px;
+}
+
+/* Menu */
+.sidebar-menu {
+  margin-top: 48px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  padding-left: 16px;
+}
+
+.sidebar-list {
+  margin-top: 38px;
+}
+
+.link {
+  text-decoration: none;
+  color: #FFFFF8;
+}
+
+.sidebar-link {
+  margin-top: 24px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.sidebar-link.active {
+  color: #B9C7FC;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.sidebar-image {
+  width: 24px;
+}
+
+.sidebar-link-title {
+  margin-left: 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bottom-menu {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 48px;
+  padding: 0 16px;
+}
+
+.sidebar-link.bottom-link {
+  padding: 0 16px;
+  margin-top: 16px;
+}
+
+.sidebar-link.bottom-link.darkmode:hover {
+  background-color: #1A1D1F;
+  cursor: default;
+}
+
+.sidebar-link.bottom-link.logout:hover {
+  cursor: pointer;
+}
+
+.sidebar-link.bottom-link {
+  padding: 10px 16px;
+}
+
+.sidebar-line.bottom {
+  margin: 16px 0;
+}
+
+.darkmode-switcher {
+  position: absolute;
+  right: 32px;
+  width: 45px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: #272B30;
+}
+
+.darkmode-switcher:hover {
+  cursor: pointer;
+}
+
+.darkmode-switcher-button {
+  width: 19px;
+  height: 19px;
+  border-radius: 100%;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  background-color: #64748B;
+}
+
+
+
+
+
+
+
+
+
+
