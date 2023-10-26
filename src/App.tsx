@@ -1,16 +1,16 @@
-import './App.css'
+import './assets/Global.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Sidebar from "./Components/Sidebar/Sidebar.tsx";
-import Header from "./Components/Header/Header.tsx";
-import HomePage from "./Components/Home/HomePage.tsx";
-import AuthPage from "./Components/Auth/AuthPage.tsx";
-import LessonsPage from "./Components/Lessons/LessonsPage.tsx";
-import ExamsPage from "./Components/Exams/ExamsPage.tsx";
-import AchievementsPage from "./Components/Achievements/AchievementsPage.tsx";
-import MissionsPage from "./Components/Missions/MissionsPage.tsx";
-import LeaderboardPage from "./Components/LeaderBoard/LeaderboardPage.tsx";
-import Profile from "./Components/Profile/Profile.tsx";
-import NotFoundPage from "./Components/NotFoundPage/NotFoundPage.tsx";
+import Sidebar from "./layouts/sidebar/Sidebar.tsx";
+import Header from "./layouts/header/Header.tsx";
+import HomePage from "./pages/home/HomePage.tsx";
+import AuthPage from "./pages/auth/AuthPage.tsx";
+import LessonsPage from "./pages/lessons/LessonsPage.tsx";
+import ExamsPage from "./pages/exams/ExamsPage.tsx";
+import AchievementsPage from "./pages/achievements/AchievementsPage.tsx";
+import MissionsPage from "./pages/missions/MissionsPage.tsx";
+import LeaderboardPage from "./pages/leader board/LeaderboardPage.tsx";
+import Profile from "./pages/profile/Profile.tsx";
+import NotFoundPage from "./pages/not found page/NotFoundPage.tsx";
 
 function App() {
 

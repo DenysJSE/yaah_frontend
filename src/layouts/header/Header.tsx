@@ -1,7 +1,7 @@
 import './Header.css'
-import XpLogo from '../../Images/expirience.png'
-import NotificationLogo from '../../Images/notif.png'
-import UserLogo from '../../Images/userlogo.jpg'
+import XpLogo from '../../assets/Images/HeaderImages/expirience.png'
+import NotificationLogo from '../../assets/Images/HeaderImages/notif.png'
+import UserLogo from '../../assets/Images/HeaderImages/userlogo.jpg'
 
 function Header() {
   return (
