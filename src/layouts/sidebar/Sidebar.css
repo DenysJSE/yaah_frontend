@@ -2,12 +2,13 @@
 .sidebar {
   width: 300px;
   padding: 0 16px;
-  background-color: #1A1D1F;
+  background-color: var(--sidebar-header-background-color);
+  color: var(--text-color);
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  border-right: 2px solid #393A41;
+  border-right: 2px solid var(--sidebar-header-border);
 }
 
 /* Logo */
@@ -31,7 +32,7 @@
   margin: auto;
   height: 3px;
   border: none;
-  background-color: #23272A;
+  background-color: var(--sidebar-header-border);
   border-radius: 10px;
 }
 
@@ -62,7 +63,7 @@
 
 .link {
   text-decoration: none;
-  color: #FFFFF8;
+  color: var(--text-color);
 }
 
 .sidebar-link {
@@ -73,14 +74,14 @@
 }
 
 .sidebar-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--link-hover);
   border-radius: 15px;
 }
 
 .sidebar-link.active {
   color: #B9C7FC;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--link-hover);
   border-radius: 15px;
 }
 
@@ -111,7 +112,8 @@
 }
 
 .sidebar-link.bottom-link.darkmode:hover {
-  background-color: #1A1D1F;
+  background-color: var(--sidebar-header-background-color);
+  color: var(--text-color);
   cursor: default;
 }
 

@@ -5,13 +5,29 @@
   font-family: "Inter Semi Bold", sans-serif;
 }
 
-body {
-  background-color: #2D2E35;
-  color: #FFFFF8;
+:root {
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+  --sidebar-header-background-color: #e7e7e7;
+  --sidebar-header-border: #cbcbcb;
+  --link-hover: #ffffff;
+  --switcher-light-background-color: #ffffff;
+  --switcher-dark-background-color: #64748B;
+  --switcher-button-color: #3e4046;
+}
+
+[data-theme="dark"] {
+  --background-color: #2D2E35;
+  --text-color: #FFFFF8;
+  --sidebar-header-background-color: #1A1D1F;
+  --sidebar-header-border: #393A41;
+  --link-hover: #313436;
 }
 
 .App {
   display: flex;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .content {

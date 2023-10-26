@@ -1,29 +1,11 @@
-import {useEffect, useState} from "react";
 import './DarkModeSwitcher.css'
 
-function DarkModeSwitcher() {
+interface DarkModeInterface {
+  handleChange: () => void,
+  isChecked: boolean
+}
 
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('darkMode')
-    return savedMode === 'dark'
-  })
-
-  const handleModeToggle = () => {
-    setIsDarkMode(!isDarkMode)
-  }
-
-  useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode')
-    if (savedMode === 'dark') {
-      setIsDarkMode(true)
-    } else {
-      setIsDarkMode(false)
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', isDarkMode ? 'dark' : 'light')
-  }, [isDarkMode]);
+function DarkModeSwitcher({ handleChange, isChecked }: DarkModeInterface) {
 
   return (
     <div className='darkmode-switcher'>
@@ -31,10 +13,10 @@ function DarkModeSwitcher() {
         <input
           type="checkbox"
           id='checkbox'
-          checked={isDarkMode}
-          onChange={handleModeToggle}
+          checked={isChecked}
+          onChange={handleChange}
         />
-        <div className={`darkmode-switcher-button round ${isDarkMode ? 'dark' : ''}`}></div>
+        <div className={`darkmode-switcher-button round ${isChecked ? 'dark' : ''}`}></div>
       </label>
     </div>
   );

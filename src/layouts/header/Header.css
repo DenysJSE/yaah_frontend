@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 400px;
-  background-color: #1A1D1F;
-  border-bottom: 2px solid #393A41;
+  background-color: var(--sidebar-header-background-color);
+  border-bottom: 2px solid var(--sidebar-header-border);
 }
 
 .title-text {

@@ -14,7 +14,7 @@
 }
 
 .darkmode-switcher-button {
-  background-color: #fffff8;
+  background-color: var(--switcher-light-background-color);
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -25,7 +25,7 @@
 }
 
 .darkmode-switcher-button:before {
-  background-color: #64748B;
+  background-color: var(--switcher-dark-background-color);
   bottom: 4px;
   content: "";
   height: 26px;
@@ -36,7 +36,7 @@
 }
 
 .darkmode-switcher input:checked + .darkmode-switcher-button {
-  background-color: #3e4046;
+  background-color: var(--switcher-button-color);
 }
 
 .darkmode-switcher input:checked + .darkmode-switcher-button:before {

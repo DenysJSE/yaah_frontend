@@ -11,17 +11,20 @@ import MissionsPage from "./pages/missions/MissionsPage.tsx";
 import LeaderboardPage from "./pages/leader board/LeaderboardPage.tsx";
 import Profile from "./pages/profile/Profile.tsx";
 import NotFoundPage from "./pages/not found page/NotFoundPage.tsx";
+import useLocalStorage from "use-local-storage";
 
 function App() {
+  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDark, setIsDark] = useLocalStorage("isDark", preference)
 
   return (
     <BrowserRouter>
-      <div className='App'>
+      <div className='App' data-theme={isDark ? "dark" : ""}>
         <div className='sidebar'>
-          <Sidebar/>
+          <Sidebar setIsDark={setIsDark} isDark={isDark}  />
         </div>
         <div className='content'>
-          <Header/>
+          <Header isDark={isDark}/>
           <div className="page">
             <Routes>
               <Route path={'/'} element={<HomePage/>}/>
@@ -38,7 +41,6 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
-
   )
 }
 
