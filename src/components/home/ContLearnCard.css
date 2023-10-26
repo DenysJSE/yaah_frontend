@@ -1,0 +1,50 @@
+.continue-learn-card {
+  width: 900px;
+  height: 130px;
+  background-color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  margin-top: 24px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.course-title {
+  font-size: 20px;
+}
+
+.course-status {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 8px;
+  position: relative;
+}
+
+.need-to-pass-bar {
+  width: 100px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: var(--progress-bar-background);
+}
+
+.passed-bar {
+  position: absolute;
+  top: 4px;
+  height: 8px;
+  width: 10px;
+  border-radius: 10px;
+  background-color: var(--passed-bar);
+}
+
+.course-passed-status {
+  font-size: 14px;
+}

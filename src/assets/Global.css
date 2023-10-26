@@ -14,6 +14,15 @@
   --switcher-light-background-color: #ffffff;
   --switcher-dark-background-color: #64748B;
   --switcher-button-color: #3e4046;
+  --button-color: #B9C7FC;
+  --button-color-hover: #a3b4ff;
+  --button-color-active: #8fa0ff;
+  --button-color-text: #000000;
+
+  --card-background-color: #e7e7e7;
+  --card-border-color: #cbcbcb;
+  --progress-bar-background: #d0d0d0;
+  --passed-bar: #8fa0ff;
 }
 
 [data-theme="dark"] {
@@ -22,6 +31,12 @@
   --sidebar-header-background-color: #1A1D1F;
   --sidebar-header-border: #393A41;
   --link-hover: #313436;
+
+  --card-background-color: #37383F;
+  --card-border-color: #4F5056;
+  --progress-bar-background: #1A1D1F;
+  --recommendation-description-color: #C9C9C9;
+  --passed-bar: #B9C7FC;
 }
 
 .App {

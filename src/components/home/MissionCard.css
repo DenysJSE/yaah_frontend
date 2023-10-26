@@ -1,0 +1,40 @@
+.mission-card {
+  background-color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 30px;
+  width: 420px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.title-description-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mission-title {
+  font-size: 18px;
+}
+
+.mission-card-description {
+  margin-top: 8px;
+}
+
+.mission-logo {
+  width: 60px;
+}
+
+.mission-link-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--passed-bar);
+  margin-top: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.goto-image {
+  width: 15px;
+}
