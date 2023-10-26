@@ -1,0 +1,14 @@
+.recommendation-level-duration {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--recommendation-description-color);
+}
+
+.recommendation-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--recommendation-description-color);
+  border-radius: 10px;
+}

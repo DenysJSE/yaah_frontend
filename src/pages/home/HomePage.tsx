@@ -20,21 +20,21 @@ function HomePage() {
               title={'Math'}
               description={'The Math is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine'}
               level={'Beginner'}
-              duration={3}
+              courseDuration={'10 hours'}
             />
             <RecommendCard
               RecommendationLogo={RecommendIcon}
               title={'History'}
               description={'The History is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine'}
               level={'Advance'}
-              duration={10}
+              courseDuration={'15 hours'}
             />
             <RecommendCard
               RecommendationLogo={RecommendIcon}
               title={'Science'}
               description={'The Science is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine'}
               level={'Intermediate'}
-              duration={6}
+              courseDuration={'5 hours'}
             />
           </div>
         </div>

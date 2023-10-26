@@ -23,6 +23,8 @@
   --card-border-color: #cbcbcb;
   --progress-bar-background: #d0d0d0;
   --passed-bar: #8fa0ff;
+
+  --lesson-title-lesson: #9DD6FF;
 }
 
 [data-theme="dark"] {
@@ -53,6 +55,6 @@
 }
 
 .page {
-  padding: 48px 400px 0 400px;
-  min-height: calc(100vh - 80px);
+  padding: 128px 400px 0 400px;
+  min-height: 100vh;
 }

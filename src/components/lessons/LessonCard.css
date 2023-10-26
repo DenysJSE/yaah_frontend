@@ -1,0 +1,23 @@
+.lesson-card {
+  background-color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 30px;
+  padding: 24px;
+  width: 400px;
+}
+
+.lesson-card-lesson {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--lesson-title-lesson);
+}
+
+.lesson-card-title {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.lesson-additional-info {
+  margin-top: 16px;
+  font-size: 14px;
+}

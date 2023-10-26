@@ -7,6 +7,10 @@
   padding: 25px 400px;
   background-color: var(--sidebar-header-background-color);
   border-bottom: 2px solid var(--sidebar-header-border);
+  position: fixed;
+  top: 0;
+  left: 300px;
+  right: 0;
 }
 
 .title-text {
