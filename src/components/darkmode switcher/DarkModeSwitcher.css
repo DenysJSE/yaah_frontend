@@ -1,0 +1,52 @@
+.darkmode-switcher {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.darkmode-switcher:hover {
+  cursor: pointer;
+}
+
+.darkmode-switcher input {
+  display: none;
+}
+
+.darkmode-switcher-button {
+  background-color: #fffff8;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.darkmode-switcher-button:before {
+  background-color: #64748B;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+.darkmode-switcher input:checked + .darkmode-switcher-button {
+  background-color: #3e4046;
+}
+
+.darkmode-switcher input:checked + .darkmode-switcher-button:before {
+  transform: translateX(26px);
+}
+
+.darkmode-switcher-button.round {
+  border-radius: 34px;
+}
+
+.darkmode-switcher-button.round:before {
+  border-radius: 50%;
+}
