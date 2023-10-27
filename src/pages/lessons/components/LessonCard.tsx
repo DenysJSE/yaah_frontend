@@ -1,5 +1,5 @@
 import './LessonCard.css'
-import SubjectTitleDuration from "../SubjectTitleDuration.tsx";
+import CardAdditionalInfo from "../../../components/CardAdditionalInfo.tsx";
 
 interface LessonInterface {
   LessonIcon: string,
@@ -15,7 +15,7 @@ function LessonCard({LessonIcon, title, subjectTitle, examsAmount}: LessonInterf
       <h2 className="lesson-card-lesson">Lesson</h2>
       <h2 className="lesson-card-title">{title}</h2>
       <div className='lesson-additional-info'>
-        <SubjectTitleDuration description={subjectTitle} additionalInfo={examsAmount} />
+        <CardAdditionalInfo description={subjectTitle} additionalInfo={examsAmount} />
       </div>
 
     </div>

@@ -1,104 +1,53 @@
 import './Lessons.css'
-import LessonCard from "../../components/lessons/LessonCard.tsx";
+import LessonCard from "./components/LessonCard.tsx";
 import LessonIcon from '../../assets/Images/ContentImages/Icon.png'
+import {useState} from "react";
+import lessonsData from '../../data/LessonsData.json'
 
 function LessonsPage() {
+  const subjects = [
+    'All',
+    'English Language',
+    'History',
+    'Math',
+    'Science',
+    'Geography',
+    'Literature',
+  ];
+
+  const [selectedSubject, setSelectedSubject] = useState('All');
+
+  const handleSubjectChange = (subject: string) => {
+    setSelectedSubject(subject);
+  };
+
+  const filteredLessons = selectedSubject === 'All'
+    ? lessonsData
+    : lessonsData.filter(lesson => lesson.subjectTitle === selectedSubject);
+
   return (
     <div className='lessons-content'>
       <div className="subject-titles">
-        <h3 className="subject-titles-title selected">All</h3>
-        <h3 className="subject-titles-title">English Language</h3>
-        <h3 className="subject-titles-title">History</h3>
-        <h3 className="subject-titles-title">Math</h3>
-        <h3 className="subject-titles-title">Science</h3>
-        <h3 className="subject-titles-title">Geography</h3>
-        <h3 className="subject-titles-title">Literature</h3>
+        {subjects.map(subject => (
+          <h3
+            key={subject}
+            className={`subject-titles-title ${selectedSubject === subject ? 'selected' : ''}`}
+            onClick={() => handleSubjectChange(subject)}
+          >
+            {subject}
+          </h3>
+        ))}
       </div>
       <div className="lessons-cards">
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
-        <LessonCard
-          LessonIcon={LessonIcon}
-          title={'Past Simple'}
-          subjectTitle={'English Language'}
-          examsAmount={'12 exams'}
-        />
+        {filteredLessons.map((lesson, index) => (
+          <LessonCard
+            key={index}
+            LessonIcon={LessonIcon}
+            title={lesson.title}
+            subjectTitle={lesson.subjectTitle}
+            examsAmount={lesson.examsAmount}
+          />
+        ))}
       </div>
     </div>
   );

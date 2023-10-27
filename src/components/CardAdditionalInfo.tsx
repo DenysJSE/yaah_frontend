@@ -1,11 +1,11 @@
-import './SubjectTitleDuration.css'
+import './CardAdditionalInfo.css'
 
 interface SubjectTitleDurationInterface {
   description: string,
   additionalInfo: string
 }
 
-function SubjectTitleDuration({description, additionalInfo}: SubjectTitleDurationInterface) {
+function CardAdditionalInfo({description, additionalInfo}: SubjectTitleDurationInterface) {
   return (
     <div className='recommendation-level-duration'>
       <span className="recommendation-course-level">{description}</span>
@@ -15,4 +15,4 @@ function SubjectTitleDuration({description, additionalInfo}: SubjectTitleDuratio
   );
 }
 
-export default SubjectTitleDuration
+export default CardAdditionalInfo

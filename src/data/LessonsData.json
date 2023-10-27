@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Past Simple",
+    "subjectTitle": "English Language",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "Present Simple",
+    "subjectTitle": "English Language",
+    "examsAmount": "10 exams"
+  },
+  {
+    "title": "Present Perfect Simple",
+    "subjectTitle": "English Language",
+    "examsAmount": "16 exams"
+  },
+  {
+    "title": "History of Ukraine 1500 - 1800 years",
+    "subjectTitle": "History",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "History of Ukraine 1800 year - now",
+    "subjectTitle": "History",
+    "examsAmount": "16 exams"
+  },
+  {
+    "title": "Algebra Elementary",
+    "subjectTitle": "Math",
+    "examsAmount": "8 exams"
+  },
+  {
+    "title": "Geometry Elementary",
+    "subjectTitle": "Math",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "Human Body",
+    "subjectTitle": "Science",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "Kinds of Animals",
+    "subjectTitle": "Science",
+    "examsAmount": "10 exams"
+  },
+  {
+    "title": "USA",
+    "subjectTitle": "Geography",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "Ukraine",
+    "subjectTitle": "Geography",
+    "examsAmount": "20 exams"
+  },
+  {
+    "title": "Poems",
+    "subjectTitle": "Literature",
+    "examsAmount": "12 exams"
+  },
+  {
+    "title": "Novels",
+    "subjectTitle": "Literature",
+    "examsAmount": "11 exams"
+  }
+]

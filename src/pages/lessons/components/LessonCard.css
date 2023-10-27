@@ -9,7 +9,7 @@
 .lesson-card-lesson {
   margin-top: 16px;
   font-size: 14px;
-  color: var(--lesson-title-lesson);
+  color: var(--lessons-card-title-lesson);
 }
 
 .lesson-card-title {

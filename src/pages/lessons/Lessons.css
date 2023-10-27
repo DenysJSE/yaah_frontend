@@ -2,6 +2,11 @@
   padding: 0 90px 100px;
 }
 
+.subject-titles-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 .subject-titles {
   display: flex;
   gap: 32px;
@@ -10,10 +15,11 @@
 .subject-titles-title {
   font-size: 18px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .subject-titles-title.selected {
-  font-weight: 600;
+  color: var(--lessons-card-title-lesson);
 }
 
 .lessons-cards {
