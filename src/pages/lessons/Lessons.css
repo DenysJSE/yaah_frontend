@@ -1,28 +1,23 @@
-.lessons-content {
+.lessons-page-content {
   padding: 0 90px 100px;
 }
 
-.subject-titles-link {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.subject-titles {
+.lessons-page-subject-titles {
   display: flex;
   gap: 32px;
 }
 
-.subject-titles-title {
+.lessons-page-subject-title {
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
 }
 
-.subject-titles-title.selected {
+.lessons-page-subject-title.subject-title-selected {
   color: var(--lessons-card-title-lesson);
 }
 
-.lessons-cards {
+.lessons-page-lessons-cards {
   margin-top: 48px;
   max-width: 1260px;
   display: flex;

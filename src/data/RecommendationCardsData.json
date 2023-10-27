@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Math",
+    "description": "The Math is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine",
+    "level": "Beginner",
+    "courseDuration": "10 hours"
+  },
+  {
+    "title": "History",
+    "description": "The History is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine",
+    "level": "Advance",
+    "courseDuration": "15 hours"
+  },
+  {
+    "title": "Science",
+    "description": "The Science is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine",
+    "level": "Intermediate",
+    "courseDuration": "5 hours"
+  },
+  {
+    "title": "Geography",
+    "description": "The Geography is very interesting and helpful subject in life. You can use whatever you want and operate anything you can imagine",
+    "level": "Beginner",
+    "courseDuration": "8 hours"
+  }
+]

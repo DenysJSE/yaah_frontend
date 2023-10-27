@@ -28,25 +28,25 @@ function Header({isDark}: HeaderInterface) {
       '/profile': 'Your Profile'
     }
 
-    setPageTitle(routeToTitle[location.pathname] || 'Page Not Found')
+    setPageTitle(routeToTitle[location.pathname] || '')
 
   }, [location]);
 
   return (
     <div className='header'>
-      <div className='title'>
-        <h1 className='title-text'>{pageTitle}</h1>
+      <div className='header-title'>
+        <h1 className='header-title-text'>{pageTitle}</h1>
       </div>
-      <div className='userInfo'>
-        <div className='user-info-div xp-count'>
-          <img src={isDark ? XpLogo : XpLogoDark} alt="xpLogo" className='header-image'/>
-          <span className='xp-amount'>500</span>
+      <div className='header-user-info'>
+        <div className='header-user-info-div xp-count'>
+          <img src={isDark ? XpLogo : XpLogoDark} alt="xpLogo" className='header-xp-notification-image'/>
+          <span className='header-xp-amount'>500</span>
         </div>
-        <div className='user-info-div notification'>
-          <img src={isDark ? NotificationLogo : NotificationLogoDark} alt="Notification" className='header-image'/>
+        <div className='header-user-info-div notification'>
+          <img src={isDark ? NotificationLogo : NotificationLogoDark} alt="Notification" className='header-xp-notification-image'/>
         </div>
-        <div className='user-info-div user'>
-          <img src={UserLogo} alt="userLogo" className='user-logo'/>
+        <div className='header-user-info-div user'>
+          <img src={UserLogo} alt="userLogo" className='header-user-logo'/>
         </div>
       </div>
     </div>

@@ -9,14 +9,14 @@ function DarkModeSwitcher({ handleChange, isChecked }: DarkModeInterface) {
 
   return (
     <div className='darkmode-switcher'>
-      <label htmlFor='checkbox' className='switch'>
+      <label htmlFor='darkmode-switcher-checkbox' className='darkmode-switcher-switch'>
         <input
           type="checkbox"
-          id='checkbox'
+          id='darkmode-switcher-checkbox'
           checked={isChecked}
           onChange={handleChange}
         />
-        <div className={`darkmode-switcher-button round ${isChecked ? 'dark' : ''}`}></div>
+        <div className='darkmode-switcher-button darkmode-switcher-round'></div>
       </label>
     </div>
   );

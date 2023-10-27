@@ -1,8 +1,8 @@
-import './ContLearnCard.css'
-import Button from "../buttons/button.tsx";
-import CourseIcon from '../../assets/Images/ContentImages/CourseIcon.png'
+import './ContinueLearnCard.css'
+import Button from "../../../../components/buttons/button.tsx";
+import CourseIcon from '../../../../assets/Images/ContentImages/CourseIcon.png'
 
-function ContLearnCard() {
+function ContinueLearnCard() {
   return (
     <div className="continue-learn-card">
       <div className="title">
@@ -25,4 +25,4 @@ function ContLearnCard() {
   );
 }
 
-export default ContLearnCard
+export default ContinueLearnCard

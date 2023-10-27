@@ -1,14 +1,14 @@
-.home-content {
+.home-page-content {
   max-width: 1460px;
   display: flex;
   justify-content: space-between;
 }
 
-.recommendation {
+.home-page-recommendation {
   margin-top: 72px;
 }
 
-.recommend-cards {
+.home-page-recommendation-cards {
   max-width: 900px;
   display: flex;
   justify-content: space-between;

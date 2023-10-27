@@ -4,7 +4,7 @@
   padding: 14px 30px;
   border: none;
   border-radius: 15px;
-  background-color: var(--button-color);
+  background-color: var(--button-link-color);
   color: var(--button-color-text);
   font-size: 18px;
   font-weight: 600;

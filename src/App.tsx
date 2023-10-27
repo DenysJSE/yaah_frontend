@@ -20,12 +20,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App' data-theme={isDark ? "dark" : ""}>
-        <div className='sidebar'>
+        <div className='app-sidebar'>
           <Sidebar setIsDark={setIsDark} isDark={isDark}  />
         </div>
-        <div className='content'>
+        <div className='app-content'>
           <Header isDark={isDark}/>
-          <div className="page">
+          <div className="app-page">
             <Routes>
               <Route path={'/'} element={<HomePage/>}/>
               <Route path={'/auth'} element={<AuthPage/>}/>

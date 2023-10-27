@@ -26,19 +26,19 @@ function LessonsPage() {
     : lessonsData.filter(lesson => lesson.subjectTitle === selectedSubject);
 
   return (
-    <div className='lessons-content'>
-      <div className="subject-titles">
+    <div className='lessons-page-content'>
+      <div className="lessons-page-subject-titles">
         {subjects.map(subject => (
           <h3
             key={subject}
-            className={`subject-titles-title ${selectedSubject === subject ? 'selected' : ''}`}
+            className={`lessons-page-subject-title ${selectedSubject === subject ? 'subject-title-selected' : ''}`}
             onClick={() => handleSubjectChange(subject)}
           >
             {subject}
           </h3>
         ))}
       </div>
-      <div className="lessons-cards">
+      <div className="lessons-page-lessons-cards">
         {filteredLessons.map((lesson, index) => (
           <LessonCard
             key={index}

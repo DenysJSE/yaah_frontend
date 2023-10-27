@@ -43,10 +43,10 @@
   transform: translateX(26px);
 }
 
-.darkmode-switcher-button.round {
+.darkmode-switcher-button.darkmode-switcher-round {
   border-radius: 34px;
 }
 
-.darkmode-switcher-button.round:before {
+.darkmode-switcher-button.darkmode-switcher-round:before {
   border-radius: 50%;
 }
