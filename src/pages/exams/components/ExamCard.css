@@ -1,0 +1,28 @@
+.exam-card {
+  background-color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 30px;
+  width: 1200px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exam-card-main-content {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.exam-card-logo {
+  width: 60px;
+}
+
+.exam-card-title {
+  font-size: 18px;
+}
+
+.exam-card-closed-test {
+  width: 20px;
+}
