@@ -3,7 +3,7 @@
   width: 300px;
   padding: 0 16px;
   background-color: var(--sidebar-header-background-color);
-  color: var(--text-color);
+  color: var(--app-text-color);
   position: fixed;
   left: 0;
   top: 0;
@@ -63,7 +63,7 @@
 
 .link {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--app-text-color);
 }
 
 .sidebar-link {
@@ -74,14 +74,14 @@
 }
 
 .sidebar-link:hover {
-  background-color: var(--link-hover);
+  background-color: var(--sidebar-menu-link-hover);
   border-radius: 15px;
 }
 
 .sidebar-link.active {
   color: #B9C7FC;
   text-decoration: none;
-  background-color: var(--link-hover);
+  background-color: var(--sidebar-menu-link-hover);
   border-radius: 15px;
 }
 
@@ -113,7 +113,7 @@
 
 .sidebar-link.sidebar-bottom-link.sidebar-darkmode:hover {
   background-color: var(--sidebar-header-background-color);
-  color: var(--text-color);
+  color: var(--app-text-color);
   cursor: default;
 }
 

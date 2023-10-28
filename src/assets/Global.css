@@ -33,46 +33,50 @@ html {
 
 /* Color variables for light mode */
 :root {
-  --background-color: #FFFFFF;
-  --text-color: #000000;
-  --sidebar-header-background-color: #e7e7e7;
-  --sidebar-header-border: #cbcbcb;
-  --link-hover: #ffffff;
-  --switcher-light-background-color: #ffffff;
-  --switcher-dark-background-color: #64748B;
-  --switcher-button-color: #3e4046;
-  --button-link-color: #B9C7FC;
-  --button-color-hover: #a3b4ff;
-  --button-color-active: #8fa0ff;
-  --button-color-text: #000000;
+  /* Main Colors */
+  --app-background-color: #2D2E35;
+  --app-text-color: #FFFFF8;
+  --app-description-color: #C9C9C9;
 
-  --card-background-color: #e7e7e7;
-  --card-border-color: #cbcbcb;
-  --progress-bar-background: #d0d0d0;
-  --passed-bar: #8fa0ff;
+  /* SideBar, Header Colors */
+  --sidebar-header-background-color: #1A1D1F;
+  --sidebar-header-border: #393A41;
+  --sidebar-menu-link-hover: #313436;
+  --darkmode-switcher-light-background-color: #ffffff;
+  --darkmode-switcher-dark-background-color: #64748B;
+  --darkmode-switcher-button-color: #3e4046;
 
+  /* Button Colors */
+  --button-link-color: #30638E;
+  --button-color-hover: #2A567A;
+  --button-color-active: #1F405B;
+  --button-color-text: #FFFFFF;
+
+  /* Card Colors */
+  --card-background-color: #37383F;
+  --card-border-color: #4F5056;
+  --progress-bar-background: #1A1D1F;
+  --passed-bar: #30638E;
   --lessons-card-title-lesson: #9DD6FF;
+
+  /* Achievements Colors */
+  --achievements-complete-color: #AAFF68;
+  --achievements-incomplete-color: #FFC5EB;
+
+  /* Edit Profile Colors */
+  --edit-profile-input-color: #4F5056;
+  --edit-profile-cancel-button-color: #4F5056;
+  --edit-profile-input-label-color: #C9C9C9;
 }
 
 /* Color variables for dark mode */
 [data-theme="dark"] {
-  --background-color: #2D2E35;
-  --text-color: #FFFFF8;
-  --sidebar-header-background-color: #1A1D1F;
-  --sidebar-header-border: #393A41;
-  --link-hover: #313436;
-
-  --card-background-color: #37383F;
-  --card-border-color: #4F5056;
-  --progress-bar-background: #1A1D1F;
-  --recommendation-description-color: #C9C9C9;
-  --passed-bar: #B9C7FC;
 }
 
 .App {
   display: flex;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--app-background-color);
+  color: var(--app-text-color);
 }
 
 .app-content {

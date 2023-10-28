@@ -1,5 +1,5 @@
 .not-found-page {
-  background-color: var(--background-color);
+  background-color: var(--app-background-color);
   position: absolute;
   top: 0;
   left: 0;

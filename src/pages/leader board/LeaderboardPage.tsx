@@ -1,4 +1,4 @@
-import './Leaderboard.css'
+import './Leaderboard.css';
 
 function LeaderboardPage() {
   return (

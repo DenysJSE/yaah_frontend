@@ -1,4 +1,4 @@
-import './Auth.css'
+import './Auth.css';
 
 function AuthPage() {
   return (

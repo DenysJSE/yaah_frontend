@@ -14,5 +14,5 @@
 
 .recommendation-card-description {
   margin-top: 8px;
-  color: var(--recommendation-description-color);
+  color: var(--app-description-color);
 }

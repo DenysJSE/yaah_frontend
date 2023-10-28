@@ -1,4 +1,4 @@
-import './Missions.css'
+import './Missions.css';
 
 function MissionsPage() {
   return (

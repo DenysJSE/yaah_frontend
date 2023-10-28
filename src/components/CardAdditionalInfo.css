@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--recommendation-description-color);
+  color: var(--app-description-color);
 }
 
 .recommendation-dot {
   width: 5px;
   height: 5px;
-  background-color: var(--recommendation-description-color);
+  background-color: var(--app-description-color);
   border-radius: 10px;
 }
