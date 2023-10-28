@@ -8,12 +8,16 @@ interface MissionInterface {
 
 function MissionCard({ title, description, MissionLogo }: MissionInterface) {
   return (
-    <div className='mission-card'>
-      <div className='mission-card-title-description'>
-        <h2 className='mission-card-title'>{title}</h2>
-        <p className='mission-card-description'>{description}</p>
+    <div className='home-mission-card'>
+      <div className='home-mission-card-title-description'>
+        <h2 className='home-mission-card-title'>{title}</h2>
+        <p className='home-mission-card-description'>{description}</p>
       </div>
-      <img src={MissionLogo} alt='missionLogo' className='mission-card-logo' />
+      <img
+        src={MissionLogo}
+        alt='missionLogo'
+        className='home-mission-card-logo'
+      />
     </div>
   );
 }
