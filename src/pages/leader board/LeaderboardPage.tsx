@@ -1,9 +1,10 @@
 import './Leaderboard.css';
+import ComingSoon from '../../assets/Images/ContentImages/coming-soon.png';
 
 function LeaderboardPage() {
   return (
-    <div>
-      <h1>It is Leader Board Page</h1>
+    <div className='leaderboard-page'>
+      <img src={ComingSoon} alt='comingSoon' />
     </div>
   );
 }

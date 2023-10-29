@@ -1,9 +1,10 @@
-import './Achievements.css'
+import './AchievementsPage.css';
+import ComingSoon from '../../assets/Images/ContentImages/coming-soon.png';
 
 function AchievementsPage() {
   return (
-    <div>
-      <h1>It is Achievement Page</h1>
+    <div className='achievements-page'>
+      <img src={ComingSoon} alt='comingSoon' />
     </div>
   );
 }

@@ -18,12 +18,12 @@ function Header({ isDark }: HeaderInterface) {
   useEffect(() => {
     const routeToTitle: { [key: string]: string } = {
       '/': 'Home',
-      '/lessons': 'Your Lessons',
-      '/exams': 'Your Exams',
-      '/achievements': 'Your Achievements',
-      '/missions': 'Missions for you',
-      '/leaderboard': 'Leader Board',
-      '/profile': 'Your Profile'
+      '/lessons': 'Lessons',
+      '/exams': 'Exams',
+      '/achievements': 'Achievements',
+      '/missions': 'Missions',
+      '/leaderboard': 'LeaderBoard',
+      '/profile': 'Profile'
     };
 
     setPageTitle(routeToTitle[location.pathname] || '');
@@ -31,27 +31,29 @@ function Header({ isDark }: HeaderInterface) {
 
   return (
     <header className='header'>
-      <div className='header-title'>
-        <h1 className='header-title-text'>{pageTitle}</h1>
-      </div>
-      <div className='header-user-info'>
-        <div className='header-user-info-div xp-count'>
-          <img
-            src={isDark ? XpLogo : XpLogoDark}
-            alt='xpLogo'
-            className='header-xp-notification-image'
-          />
-          <span className='header-xp-amount'>500</span>
+      <div className='header-content-center'>
+        <div className='header-title'>
+          <h1 className='header-title-text'>{pageTitle}</h1>
         </div>
-        <div className='header-user-info-div notification'>
-          <img
-            src={isDark ? NotificationLogo : NotificationLogoDark}
-            alt='Notification'
-            className='header-xp-notification-image'
-          />
-        </div>
-        <div className='header-user-info-div user'>
-          <img src={UserLogo} alt='userLogo' className='header-user-logo' />
+        <div className='header-user-info'>
+          <div className='header-user-info-div xp-count'>
+            <img
+              src={isDark ? XpLogo : XpLogoDark}
+              alt='xpLogo'
+              className='header-xp-notification-image'
+            />
+            <span className='header-xp-amount'>500</span>
+          </div>
+          <div className='header-user-info-div notification'>
+            <img
+              src={isDark ? NotificationLogo : NotificationLogoDark}
+              alt='Notification'
+              className='header-xp-notification-image'
+            />
+          </div>
+          <div className='header-user-info-div user'>
+            <img src={UserLogo} alt='userLogo' className='header-user-logo' />
+          </div>
         </div>
       </div>
     </header>

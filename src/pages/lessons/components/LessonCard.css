@@ -3,7 +3,8 @@
   border: 2px solid var(--card-border-color);
   border-radius: 30px;
   padding: 24px;
-  width: 400px;
+  min-width: 300px;
+  flex-grow: 1;
 }
 
 .lesson-card-lesson {

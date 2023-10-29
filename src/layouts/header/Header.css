@@ -1,15 +1,23 @@
 .header {
   height: 80px;
+  padding: 25px 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sidebar-header-background-color);
+  border-bottom: 2px solid var(--sidebar-header-border);
+  z-index: 999;
+}
+
+.header-content-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 400px;
-  background-color: var(--sidebar-header-background-color);
-  border-bottom: 2px solid var(--sidebar-header-border);
-  position: fixed;
-  top: 0;
-  left: 300px;
-  right: 0;
+  flex: 1;
 }
 
 .header-title-text {
@@ -44,6 +52,11 @@
   border-radius: 50%;
 }
 
+@media (max-width: 1800px) {
+  .header {
+    padding: 25px 50px;
+  }
+}
 
 
 

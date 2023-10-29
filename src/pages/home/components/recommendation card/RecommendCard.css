@@ -3,8 +3,9 @@
   border: 2px solid var(--card-border-color);
   border-radius: 30px;
   padding: 24px;
-  width: 440px;
   margin-top: 24px;
+  min-width: 300px;
+  flex-grow: 1;
 }
 
 .recommendation-card-title {

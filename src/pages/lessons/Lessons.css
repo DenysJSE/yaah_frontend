@@ -1,10 +1,12 @@
 .lessons-page-content {
-  padding: 0 90px 100px;
+  padding: 0 200px 100px;
+  width: 100%;
 }
 
 .lessons-page-subject-titles {
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
 }
 
 .lessons-page-subject-title {
@@ -19,9 +21,25 @@
 
 .lessons-page-lessons-cards {
   margin-top: 48px;
-  max-width: 1260px;
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}
+
+@media (max-width: 1980px) {
+  .lessons-page-lessons-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1400px) {
+  .lessons-page-lessons-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .lessons-page-content {
+    padding: 0 50px 100px;
+  }
 }

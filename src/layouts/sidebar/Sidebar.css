@@ -9,6 +9,7 @@
   top: 0;
   bottom: 0;
   border-right: 2px solid var(--sidebar-header-border);
+  z-index: 999;
 }
 
 /* Logo */
