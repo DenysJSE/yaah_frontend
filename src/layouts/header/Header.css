@@ -45,10 +45,12 @@
 
 .header-xp-notification-image {
   width: 24px;
+  height: auto;
 }
 
 .header-user-logo {
   width: 40px;
+  height: auto;
   border-radius: 50%;
 }
 

@@ -6,7 +6,12 @@ function ContinueLearnCard() {
   return (
     <div className='continue-learn-card'>
       <div className='title'>
-        <img src={CourseIcon} alt='logo' />
+        <img
+          src={CourseIcon}
+          width={48}
+          height={48}
+          alt='logo'
+        />
         <div className='course-name-status'>
           <h2 className='course-title'>English Language</h2>
           <div className='course-status'>

@@ -13,7 +13,13 @@ function ExamCard({title, subjectTitle, testAmount}: ExamInterface) {
   return (
     <div className='exam-card'>
       <div className='exam-card-main-content'>
-        <img src={ExamLogo} alt="examLogo" className='exam-card-logo'/>
+        <img
+          src={ExamLogo}
+          width={48}
+          height={48}
+          alt="examLogo"
+          className='exam-card-logo'
+        />
         <div className="exam-card-title-description">
           <h2 className="exam-card-title">{title}</h2>
           <CardAdditionalInfo description={subjectTitle} additionalInfo={testAmount} />
