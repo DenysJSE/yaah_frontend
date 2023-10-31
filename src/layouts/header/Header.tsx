@@ -39,8 +39,6 @@ function Header({ isDark }: HeaderInterface) {
           <div className='header-user-info-div xp-count'>
             <img
               src={isDark ? XpLogo : XpLogoDark}
-              width={24}
-              height={24}
               alt='xpLogo'
               className='header-xp-notification-image'
             />
@@ -49,20 +47,12 @@ function Header({ isDark }: HeaderInterface) {
           <div className='header-user-info-div notification'>
             <img
               src={isDark ? NotificationLogo : NotificationLogoDark}
-              width={24}
-              height={24}
               alt='Notification'
               className='header-xp-notification-image'
             />
           </div>
           <div className='header-user-info-div user'>
-            <img
-              src={UserLogo}
-              width={40}
-              height={40}
-              alt='userLogo'
-              className='header-user-logo'
-            />
+            <img src={UserLogo} alt='userLogo' className='header-user-logo' />
           </div>
         </div>
       </div>

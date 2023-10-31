@@ -16,13 +16,7 @@ function LessonCard({
 }: LessonInterface) {
   return (
     <div className='lesson-card'>
-      <img
-        src={LessonIcon}
-        width={48}
-        height={48}
-        alt='lessonIcon'
-        className='lesson-card-icon'
-      />
+      <img src={LessonIcon} alt='lessonIcon' className='lesson-card-icon' />
       <h2 className='lesson-card-lesson'>Lesson</h2>
       <h2 className='lesson-card-title'>{title}</h2>
       <div className='lesson-additional-info'>

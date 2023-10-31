@@ -15,8 +15,6 @@ function MissionCard({ title, description, MissionLogo }: MissionInterface) {
       </div>
       <img
         src={MissionLogo}
-        width={48}
-        height={48}
         alt='missionLogo'
         className='home-mission-card-logo'
       />

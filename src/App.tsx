@@ -6,9 +6,7 @@ import HomePage from './pages/home/HomePage.tsx';
 import AuthPage from './pages/auth/AuthPage.tsx';
 import LessonsPage from './pages/lessons/LessonsPage.tsx';
 import ExamsPage from './pages/exams/ExamsPage.tsx';
-import AchievementsPage from './pages/achievements/AchievementsPage.tsx';
 import MissionsPage from './pages/missions/MissionsPage.tsx';
-import LeaderboardPage from './pages/leader board/LeaderboardPage.tsx';
 import Profile from './pages/profile/Profile.tsx';
 import NotFoundPage from './pages/not found page/NotFoundPage.tsx';
 import useLocalStorage from 'use-local-storage';
@@ -31,9 +29,7 @@ function App() {
               <Route path={'/auth'} element={<AuthPage />} />
               <Route path={'/lessons'} element={<LessonsPage />} />
               <Route path={'/exams'} element={<ExamsPage />} />
-              <Route path={'/achievements'} element={<AchievementsPage />} />
               <Route path={'/missions'} element={<MissionsPage />} />
-              <Route path={'/leaderboard'} element={<LeaderboardPage />} />
               <Route path={'/profile'} element={<Profile />} />
               <Route path={'*'} element={<NotFoundPage />} />
             </Routes>
