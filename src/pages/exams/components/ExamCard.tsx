@@ -1,7 +1,6 @@
 import './ExamCard.css';
 import ExamLogo from '../../../assets/Images/ContentImages/Icon.png';
 import CardAdditionalInfo from '../../../components/CardAdditionalInfo.tsx';
-import Lock from '../../../assets/Images/ContentImages/padlock.png';
 
 interface ExamInterface {
   title: string;
@@ -22,7 +21,6 @@ function ExamCard({ title, subjectTitle, testAmount }: ExamInterface) {
           />
         </div>
       </div>
-      <img src={Lock} alt='lockImage' className='exam-card-closed-test' />
     </div>
   );
 }

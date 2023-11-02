@@ -1,6 +1,45 @@
-.exam-page {
+.exam-page-content {
+  padding: 0 200px 100px;
+  width: 100%;
+}
+
+.exam-page-subject-titles {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.exam-page-subject-title {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.exam-page-subject-title.subject-title-selected {
+  color: var(--lessons-card-title-lesson);
+}
+
+.exam-page-exam-cards {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}
+
+@media (max-width: 1980px) {
+  .exam-page-exam-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1400px) {
+  .exam-page-exam-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .exam-page-content {
+    padding: 0 50px 100px;
+  }
 }
