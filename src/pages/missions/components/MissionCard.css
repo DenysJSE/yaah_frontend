@@ -2,11 +2,9 @@
   background-color: var(--card-background-color);
   border: 2px solid var(--card-border-color);
   border-radius: 30px;
-  width: 1200px;
   padding: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  min-width: 300px;
+  flex-grow: 1;
 }
 
 .mission-card-main-content {
@@ -31,8 +29,4 @@
 
 .mission-card-description {
  color: var(--app-description-color);
-}
-
-.mission-card-closed-test {
-  width: 20px;
 }

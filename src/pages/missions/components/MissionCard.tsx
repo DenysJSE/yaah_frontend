@@ -1,6 +1,5 @@
 import './MissionCard.css';
 import MissionLogo from '../../../assets/Images/ContentImages/Icon.png';
-import Lock from '../../../assets/Images/ContentImages/padlock.png';
 
 interface MissionInterface {
   title: string;
@@ -17,7 +16,6 @@ function MissionCard({ title, description }: MissionInterface) {
           <p className='mission-card-description'>{description}</p>
         </div>
       </div>
-      <img src={Lock} alt='lockImage' className='mission-card-closed-test' />
     </div>
   );
 }

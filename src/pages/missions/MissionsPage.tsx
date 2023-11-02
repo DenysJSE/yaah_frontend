@@ -7,13 +7,15 @@ function MissionsPage() {
 
   return (
     <div className='missions-page'>
-      {missions.map((mission, index) => (
-        <MissionCard
-          key={index}
-          title={mission.title}
-          description={mission.description}
-        />
-      ))}
+      <div className='missions-page-missions-cards'>
+        {missions.map((mission, index) => (
+          <MissionCard
+            key={index}
+            title={mission.title}
+            description={mission.description}
+          />
+        ))}
+      </div>
     </div>
   );
 }
