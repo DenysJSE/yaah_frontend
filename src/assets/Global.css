@@ -91,3 +91,9 @@ html {
   padding: 128px 0;
   min-height: 100vh;
 }
+
+@media (max-width: 750px) {
+  .app-content {
+    padding: 0;
+  }
+}

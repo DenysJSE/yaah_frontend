@@ -1,13 +1,12 @@
 .continue-learn-card {
   flex: 1;
-  height: 130px;
   background-color: var(--card-background-color);
   border: 2px solid var(--card-border-color);
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 48px;
+  padding: 24px 48px;
   margin-top: 24px;
 }
 
@@ -48,4 +47,18 @@
 
 .course-passed-status {
   font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  .continue-learn-card {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .continue-learn-card-button {
+    display: flex;
+    margin: auto;
+  }
 }

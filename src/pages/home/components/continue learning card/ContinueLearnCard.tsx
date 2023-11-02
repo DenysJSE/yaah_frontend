@@ -18,7 +18,7 @@ function ContinueLearnCard() {
           </div>
         </div>
       </div>
-      <div className='button'>
+      <div className='continue-learn-card-button'>
         <Button text={'Resume Course'} />
       </div>
     </div>
