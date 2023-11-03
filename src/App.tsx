@@ -19,10 +19,10 @@ function App() {
     <BrowserRouter>
       <div className='App' data-theme={isDark ? 'dark' : ''}>
         <div className='app-sidebar'>
-          <Sidebar setIsDark={setIsDark} isDark={isDark} />
+          <Sidebar isDark={isDark} />
         </div>
         <div className='app-content'>
-          <Header isDark={isDark} />
+          <Header isDark={isDark} setIsDark={setIsDark} />
           <div className='app-page'>
             <Routes>
               <Route path={'/'} element={<HomePage />} />

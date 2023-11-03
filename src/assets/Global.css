@@ -67,6 +67,8 @@ html {
   --edit-profile-input-color: #4F5056;
   --edit-profile-cancel-button-color: #4F5056;
   --edit-profile-input-label-color: #C9C9C9;
+
+  --header-pop-up-link-hover: #64656e
 }
 
 /* Color variables for dark mode */
@@ -90,6 +92,11 @@ html {
   display: flex;
   padding: 128px 0;
   min-height: 100vh;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--app-text-color);
 }
 
 @media (max-width: 850px) {

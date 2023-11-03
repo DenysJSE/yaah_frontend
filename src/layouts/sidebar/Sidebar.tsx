@@ -12,19 +12,13 @@ import ExamsDark from '../../assets/Images/SideBarImages/exam_dark.png';
 import Missions from '../../assets/Images/SideBarImages/mission.png';
 import MissionsActive from '../../assets/Images/SideBarImages/mission_active.png';
 import MissionsDark from '../../assets/Images/SideBarImages/mission_dark.png';
-import DarkMode from '../../assets/Images/SideBarImages/dark_mode.png';
-import LightMode from '../../assets/Images/SideBarImages/light_mode.png';
-import Logout from '../../assets/Images/SideBarImages/logout.png';
-import LogoutDark from '../../assets/Images/SideBarImages/logout_dark.png';
 import { NavLink } from 'react-router-dom';
-import DarkModeSwitcher from './component/darkmode switcher/DarkModeSwitcher.tsx';
 
 interface SideBarInterface {
-  setIsDark: (isDark: boolean) => void,
   isDark: boolean
 }
 
-function Sidebar({ setIsDark, isDark }: SideBarInterface) {
+function Sidebar({ isDark }: SideBarInterface) {
 
   return (
     <div className='sidebar'>
@@ -91,26 +85,17 @@ function Sidebar({ setIsDark, isDark }: SideBarInterface) {
           </div>
         </div>
       </div>
-      <div className='sidebar-bottom-menu'>
-        <div className='sidebar-link sidebar-bottom-link sidebar-darkmode'>
-          <div className='sidebar-darkmode-title'>
-            <img src={isDark ? DarkMode : LightMode}
-                 alt='darkmode'
-                 className='sidebar-menu-image'
-            />
-            <h3 className='sidebar-link-title'>Dark Mode</h3>
-          </div>
-          <DarkModeSwitcher handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
-        </div>
-        <hr className='sidebar-line sidebar-line-bottom' />
-        <div className='sidebar-link sidebar-bottom-link logout'>
-          <img src={isDark ? Logout : LogoutDark}
-               alt='logout'
-               className='sidebar-menu-image'
-          />
-          <h3 className='sidebar-link-title'>Logout</h3>
-        </div>
-      </div>
+      {/*<div className='sidebar-bottom-menu'>*/}
+
+      {/*  <hr className='sidebar-line sidebar-line-bottom' />*/}
+      {/*  <div className='sidebar-link sidebar-bottom-link logout'>*/}
+      {/*    <img src={isDark ? Logout : LogoutDark}*/}
+      {/*         alt='logout'*/}
+      {/*         className='sidebar-menu-image'*/}
+      {/*    />*/}
+      {/*    <h3 className='sidebar-link-title'>Logout</h3>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </div>
   );
 }

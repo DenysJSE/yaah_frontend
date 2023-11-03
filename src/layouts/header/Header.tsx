@@ -6,14 +6,17 @@ import NotificationLogoDark from '../../assets/Images/HeaderImages/notif_dark.pn
 import UserLogo from '../../assets/Images/HeaderImages/userlogo.jpg';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import ProfilePopUp from '../profile popup menu/ProfilePopUp.tsx';
 
 interface HeaderInterface {
   isDark: boolean;
+  setIsDark: (isDark: boolean) => void
 }
 
-function Header({ isDark }: HeaderInterface) {
+function Header({ isDark, setIsDark }: HeaderInterface) {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState('');
+  const [isProfileVisible, setIsProfileVisible] = useState(false);
 
   useEffect(() => {
     const routeToTitle: { [key: string]: string } = {
@@ -28,6 +31,14 @@ function Header({ isDark }: HeaderInterface) {
 
     setPageTitle(routeToTitle[location.pathname] || '');
   }, [location]);
+
+  const handleProfileHover = () => {
+    setIsProfileVisible(true);
+  };
+
+  const handleProfileLeave = () => {
+    setIsProfileVisible(false);
+  };
 
   return (
     <header className='header'>
@@ -51,9 +62,21 @@ function Header({ isDark }: HeaderInterface) {
               className='header-xp-notification-image'
             />
           </div>
-          <div className='header-user-info-div user'>
+          <div
+            className='header-user-info-div user'
+            onMouseEnter={handleProfileHover}
+            onMouseLeave={handleProfileLeave}
+          >
             <img src={UserLogo} alt='userLogo' className='header-user-logo' />
           </div>
+          {isProfileVisible &&
+            <div
+              onMouseEnter={handleProfileHover}
+              onMouseLeave={handleProfileLeave}
+            >
+              <ProfilePopUp isDark={isDark} setIsDark={setIsDark} />
+            </div>
+          }
         </div>
       </div>
     </header>
