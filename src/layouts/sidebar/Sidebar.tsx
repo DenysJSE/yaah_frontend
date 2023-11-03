@@ -36,7 +36,7 @@ function Sidebar({ isDark }: SideBarInterface) {
           <div className='sidebar-top-menu'>
             <div className='sidebar-sub-menu'>
               <div className='sidebar-sub-menu-list'>
-                <NavLink to={'/'} className='link'>
+                <NavLink to={'/home'} className='link'>
                   {({ isActive }) => (
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
                       <img src={isActive ? HomeActive : isDark ? Home : HomeDark}

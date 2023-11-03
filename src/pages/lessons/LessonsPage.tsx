@@ -1,5 +1,5 @@
-import './Lessons.css';
-import LessonCard from './components/LessonCard.tsx';
+import './LessonsPage.css';
+import LessonCard from './components/card/LessonCard.tsx';
 import LessonIcon from '../../assets/Images/ContentImages/Icon.png';
 import { useState } from 'react';
 import lessonsData from '../../data/LessonsData.json';
@@ -45,6 +45,7 @@ function LessonsPage() {
         {filteredLessons.map((lesson, index) => (
           <LessonCard
             key={index}
+            id={lesson.id}
             LessonIcon={LessonIcon}
             title={lesson.title}
             subjectTitle={lesson.subjectTitle}

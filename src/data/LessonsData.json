@@ -1,66 +1,92 @@
 [
   {
+    "id": 1,
     "title": "Past Simple",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "English Language",
     "examsAmount": "12 exams"
   },
   {
+    "id": 2,
     "title": "Present Simple",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "English Language",
     "examsAmount": "10 exams"
   },
   {
+    "id": 3,
     "title": "Present Perfect Simple",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "English Language",
     "examsAmount": "16 exams"
   },
   {
+    "id": 4,
     "title": "History of Ukraine 1500 - 1800 years",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "History",
     "examsAmount": "12 exams"
   },
   {
+    "id": 5,
     "title": "History of Ukraine 1800 year - now",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "History",
     "examsAmount": "16 exams"
   },
   {
+    "id": 6,
     "title": "Algebra Elementary",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Math",
     "examsAmount": "8 exams"
   },
   {
+    "id": 7,
     "title": "Geometry Elementary",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Math",
     "examsAmount": "12 exams"
   },
   {
+    "id": 8,
     "title": "Human Body",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Science",
     "examsAmount": "12 exams"
   },
   {
+    "id": 9,
     "title": "Kinds of Animals",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Science",
     "examsAmount": "10 exams"
   },
   {
+    "id": 10,
     "title": "USA",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Geography",
     "examsAmount": "12 exams"
   },
   {
+    "id": 11,
     "title": "Ukraine",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Geography",
     "examsAmount": "20 exams"
   },
   {
+    "id": 12,
     "title": "Poems",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Literature",
     "examsAmount": "12 exams"
   },
   {
+    "id": 13,
     "title": "Novels",
+    "data": "The past simple is very interesting item in English language",
     "subjectTitle": "Literature",
     "examsAmount": "11 exams"
   }
