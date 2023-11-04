@@ -40,7 +40,7 @@ function ExamComponent() {
   const handleContinue = () => {
     if (currentQuestionIndex < exam.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setProgress((currentQuestionIndex + 1) * (100 / (exam.questions.length - 1)));
+      setProgress((currentQuestionIndex + 1) * (100 / (exam.questions.length)));
       setPassedQuestions(currentQuestionIndex + 1);
       setSelectedOption(null);
       setContinueEnabled(false);
