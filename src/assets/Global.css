@@ -68,7 +68,15 @@ html {
   --edit-profile-cancel-button-color: #4F5056;
   --edit-profile-input-label-color: #C9C9C9;
 
-  --header-pop-up-link-hover: #64656e
+  --header-pop-up-link-hover: #64656e;
+
+  --exam-header-footer-background: #37383F;
+  --exam-progress-bar-background: #4F5056;
+  --exam-progress-bar-passed-background: #30638EFF;
+  --exam-card-option-active: #35CE8D;
+
+  --button-disable: #4F5056;
+  --button-disable-text-color: #2D2E35;
 }
 
 /* Color variables for dark mode */

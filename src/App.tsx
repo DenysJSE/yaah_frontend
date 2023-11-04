@@ -12,6 +12,7 @@ import NotFoundPage from './pages/not found page/NotFoundPage.tsx';
 import useLocalStorage from 'use-local-storage';
 
 import LessonComponent from './pages/lessons/components/lesson/LessonComponent.tsx';
+import ExamComponent from './pages/exams/components/exam/ExamComponent.tsx';
 
 function App() {
   const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -32,6 +33,7 @@ function App() {
               <Route path={'/lessons'} element={<LessonsPage />} />
               <Route path={'/lesson/:id'} element={<LessonComponent />} />
               <Route path={'/exams'} element={<ExamsPage />} />
+              <Route path={'/exam/:id'} element={<ExamComponent />} />
               <Route path={'/missions'} element={<MissionsPage />} />
               <Route path={'/profile'} element={<Profile />} />
               <Route path={'*'} element={<NotFoundPage />} />

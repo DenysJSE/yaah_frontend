@@ -1,6 +1,5 @@
 import './LessonsPage.css';
 import LessonCard from './components/card/LessonCard.tsx';
-import LessonIcon from '../../assets/Images/ContentImages/Icon.png';
 import { useState } from 'react';
 import lessonsData from '../../data/LessonsData.json';
 
@@ -46,7 +45,6 @@ function LessonsPage() {
           <LessonCard
             key={index}
             id={lesson.id}
-            LessonIcon={LessonIcon}
             title={lesson.title}
             subjectTitle={lesson.subjectTitle}
             examsAmount={lesson.examsAmount}

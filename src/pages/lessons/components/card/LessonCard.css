@@ -7,18 +7,16 @@
   flex-grow: 1;
 }
 
-.lesson-card-lesson {
-  margin-top: 16px;
-  font-size: 14px;
-  color: var(--lessons-card-title-lesson);
+.lesson-card-main-content {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.lesson-card-icon {
+  width: 60px;
 }
 
 .lesson-card-title {
-  margin-top: 16px;
   font-size: 18px;
-}
-
-.lesson-additional-info {
-  margin-top: 16px;
-  font-size: 14px;
 }

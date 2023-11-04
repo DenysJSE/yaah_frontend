@@ -1,5 +1,5 @@
 import './Exams.css';
-import ExamCard from './components/ExamCard.tsx';
+import ExamCard from './components/card/ExamCard.tsx';
 import ExamsData from '../../data/ExamCardsData.json';
 import { useState } from 'react';
 
@@ -44,6 +44,7 @@ function ExamsPage() {
         {filteredExams.map((exam, index) => (
         <ExamCard
           key={index}
+          id={exam.id}
           title={exam.title}
           subjectTitle={exam.subjectTitle}
           testAmount={`${exam.testAmount} tests`}
