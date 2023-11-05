@@ -1,9 +1,16 @@
 import ExamsData from '@data/ExamCardsData.json';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
+import { RootState } from '../../store/store.ts';
 import ExamCard from './components/card/ExamCard.tsx';
 import './Exams.css';
 
 function ExamsPage() {
+  const selectedSubject = useSelector(
+    (state: RootState) => state.subjects.selectedSubject
+  );
+  const dispatch = useDispatch();
+
   const subjects = [
     'All',
     'English Language',
@@ -14,10 +21,8 @@ function ExamsPage() {
     'Literature'
   ];
 
-  const [selectedSubject, setSelectedSubject] = useState('All');
-
   const handleSubjectChange = (subject: string) => {
-    setSelectedSubject(subject);
+    dispatch(setSelectedSubject(subject));
   };
 
   const filteredExams =

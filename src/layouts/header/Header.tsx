@@ -3,6 +3,7 @@ import XpLogoDark from '@assets/Images/HeaderImages/expirience_dark.png';
 import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
 import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
 import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
+import Button from '@components/button.tsx';
 import ProfilePopUp from '@layouts/profile popup menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -29,7 +30,7 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
       '/profile': 'Profile'
     };
 
-    setPageTitle(routeToTitle[location.pathname] || '');
+    setPageTitle(routeToTitle[location.pathname]);
   }, [location]);
 
   const handleProfileHover = () => {
@@ -44,7 +45,13 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
     <header className='header'>
       <div className='header-content-center'>
         <div className='header-title'>
-          <h1 className='header-title-text'>{pageTitle}</h1>
+          {location.pathname.startsWith('/lesson/') ? (
+            <div onClick={() => history.back()}>
+              <Button text={'Back'} />
+            </div>
+          ) : (
+            <h1 className='header-title-text'>{pageTitle}</h1>
+          )}
         </div>
         <div className='header-user-info'>
           <div className='header-user-info-div xp-count'>

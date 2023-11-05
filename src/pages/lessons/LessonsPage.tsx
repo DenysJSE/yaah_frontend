@@ -1,9 +1,16 @@
 import lessonsData from '@data/LessonsData.json';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
+import { RootState } from '../../store/store.ts';
 import LessonCard from './components/card/LessonCard.tsx';
 import './LessonsPage.css';
 
 function LessonsPage() {
+  const selectedSubject = useSelector(
+    (state: RootState) => state.subjects.selectedSubject
+  );
+  const dispatch = useDispatch();
+
   const subjects = [
     'All',
     'English Language',
@@ -14,10 +21,8 @@ function LessonsPage() {
     'Literature'
   ];
 
-  const [selectedSubject, setSelectedSubject] = useState('All');
-
   const handleSubjectChange = (subject: string) => {
-    setSelectedSubject(subject);
+    dispatch(setSelectedSubject(subject));
   };
 
   const filteredLessons =
