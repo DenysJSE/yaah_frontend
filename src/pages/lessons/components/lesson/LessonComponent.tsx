@@ -1,19 +1,21 @@
-import './LessonComponent.css';
+import lessonData from '@data/LessonsData.json';
+import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import { useParams } from 'react-router-dom';
-import lessonData from '../../../../data/LessonsData.json'
-import NotFoundPage from '../../../not found page/NotFoundPage.tsx';
+import './LessonComponent.css';
 
 function LessonComponent() {
-  const {id} = useParams()
+  const { id } = useParams();
 
   if (!id) {
-    return <NotFoundPage />
+    return <NotFoundPage />;
   }
 
-  const lesson = lessonData.find(item => item.id === parseInt(id))
+  const lesson = lessonData.find(item => item.id === parseInt(id));
 
   if (!lesson) {
-    return <NotFoundPage extraMessage={'The lesson with such id do not exist'} />
+    return (
+      <NotFoundPage extraMessage={'The lesson with such id do not exist'} />
+    );
   }
 
   return (

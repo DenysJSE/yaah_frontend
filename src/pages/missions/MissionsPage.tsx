@@ -1,6 +1,6 @@
-import './Missions.css';
-import missionsData from '../../data/MissionsData.json';
+import missionsData from '@data/MissionsData.json';
 import MissionCard from './components/MissionCard.tsx';
+import './Missions.css';
 
 function MissionsPage() {
   const missions = missionsData;

@@ -1,6 +1,6 @@
+import CourseIcon from '@assets/Images/ContentImages/CourseIcon.png';
+import Button from '@components/button.tsx';
 import './ContinueLearnCard.css';
-import Button from '../../../../components/button.tsx';
-import CourseIcon from '../../../../assets/Images/ContentImages/CourseIcon.png';
 
 function ContinueLearnCard() {
   return (

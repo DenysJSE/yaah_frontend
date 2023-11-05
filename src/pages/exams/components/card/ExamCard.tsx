@@ -1,7 +1,7 @@
-import './ExamCard.css';
-import ExamLogo from '../../../../assets/Images/ContentImages/Icon.png';
-import CardAdditionalInfo from '../../../../components/CardAdditionalInfo.tsx';
+import ExamLogo from '@assets/Images/ContentImages/Icon.png';
+import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
 import { Link } from 'react-router-dom';
+import './ExamCard.css';
 
 interface ExamInterface {
   id: number;

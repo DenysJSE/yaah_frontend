@@ -1,34 +1,29 @@
-import './Sidebar.css';
-import YaahLogo from '../../assets/Images/HeaderImages/Logo.png';
-import Home from '../../assets/Images/SideBarImages/home.png';
-import HomeActive from '../../assets/Images/SideBarImages/home_active.png';
-import HomeDark from '../../assets/Images/SideBarImages/home_dark.png';
-import Lessons from '../../assets/Images/SideBarImages/lessons.png';
-import LessonsActive from '../../assets/Images/SideBarImages/lessons_active.png';
-import LessonsDark from '../../assets/Images/SideBarImages/lessons_dark.png';
-import Exams from '../../assets/Images/SideBarImages/exam.png';
-import ExamsActive from '../../assets/Images/SideBarImages/exam_active.png';
-import ExamsDark from '../../assets/Images/SideBarImages/exam_dark.png';
-import Missions from '../../assets/Images/SideBarImages/mission.png';
-import MissionsActive from '../../assets/Images/SideBarImages/mission_active.png';
-import MissionsDark from '../../assets/Images/SideBarImages/mission_dark.png';
+import Exams from '@assets/Images/SideBarImages/exam.png';
+import ExamsActive from '@assets/Images/SideBarImages/exam_active.png';
+import ExamsDark from '@assets/Images/SideBarImages/exam_dark.png';
+import Home from '@assets/Images/SideBarImages/home.png';
+import HomeActive from '@assets/Images/SideBarImages/home_active.png';
+import HomeDark from '@assets/Images/SideBarImages/home_dark.png';
+import Lessons from '@assets/Images/SideBarImages/lessons.png';
+import LessonsActive from '@assets/Images/SideBarImages/lessons_active.png';
+import LessonsDark from '@assets/Images/SideBarImages/lessons_dark.png';
+import YaahLogo from '@assets/Images/SideBarImages/Logo.png';
+import Missions from '@assets/Images/SideBarImages/mission.png';
+import MissionsActive from '@assets/Images/SideBarImages/mission_active.png';
+import MissionsDark from '@assets/Images/SideBarImages/mission_dark.png';
 import { NavLink } from 'react-router-dom';
+import './Sidebar.css';
 
 interface SideBarInterface {
-  isDark: boolean
+  isDark: boolean;
 }
 
 function Sidebar({ isDark }: SideBarInterface) {
-
   return (
     <div className='sidebar'>
       <div className='sidebar-top'>
         <div className='sidebar-logo'>
-          <img
-            src={YaahLogo}
-            alt='Logo'
-            className='sidebar-logo-image'
-          />
+          <img src={YaahLogo} alt='Logo' className='sidebar-logo-image' />
           <h1 className='sidebar-logo-title'>aah</h1>
         </div>
         <hr className='sidebar-line' />
@@ -39,9 +34,10 @@ function Sidebar({ isDark }: SideBarInterface) {
                 <NavLink to={'/home'} className='link'>
                   {({ isActive }) => (
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
-                      <img src={isActive ? HomeActive : isDark ? Home : HomeDark}
-                           alt='home'
-                           className='sidebar-menu-image'
+                      <img
+                        src={isActive ? HomeActive : isDark ? Home : HomeDark}
+                        alt='home'
+                        className='sidebar-menu-image'
                       />
                       <h3 className='sidebar-link-title'>Home</h3>
                     </div>
@@ -50,9 +46,16 @@ function Sidebar({ isDark }: SideBarInterface) {
                 <NavLink to={'/lessons'} className='link'>
                   {({ isActive }) => (
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
-                      <img src={isActive ? LessonsActive : isDark ? Lessons : LessonsDark}
-                           alt='lessons'
-                           className='sidebar-menu-image'
+                      <img
+                        src={
+                          isActive
+                            ? LessonsActive
+                            : isDark
+                            ? Lessons
+                            : LessonsDark
+                        }
+                        alt='lessons'
+                        className='sidebar-menu-image'
                       />
                       <h3 className='sidebar-link-title'>Lessons</h3>
                     </div>
@@ -61,9 +64,12 @@ function Sidebar({ isDark }: SideBarInterface) {
                 <NavLink to={'/exams'} className='link'>
                   {({ isActive }) => (
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
-                      <img src={isActive ? ExamsActive : isDark ? Exams : ExamsDark}
-                           alt='exams'
-                           className='sidebar-menu-image'
+                      <img
+                        src={
+                          isActive ? ExamsActive : isDark ? Exams : ExamsDark
+                        }
+                        alt='exams'
+                        className='sidebar-menu-image'
                       />
                       <h3 className='sidebar-link-title'>Exams</h3>
                     </div>
@@ -72,9 +78,16 @@ function Sidebar({ isDark }: SideBarInterface) {
                 <NavLink to={'/missions'} className='link'>
                   {({ isActive }) => (
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
-                      <img src={isActive ? MissionsActive : isDark ? Missions : MissionsDark}
-                           alt='missions'
-                           className='sidebar-menu-image'
+                      <img
+                        src={
+                          isActive
+                            ? MissionsActive
+                            : isDark
+                            ? Missions
+                            : MissionsDark
+                        }
+                        alt='missions'
+                        className='sidebar-menu-image'
                       />
                       <h3 className='sidebar-link-title'>Missions</h3>
                     </div>

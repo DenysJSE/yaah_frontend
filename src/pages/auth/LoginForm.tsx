@@ -1,6 +1,6 @@
 import './Auth.css';
 
-function LoginPage() {
+function LoginForm() {
   return (
     <div>
       <h1>It is Login Page</h1>
@@ -8,4 +8,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default LoginForm;

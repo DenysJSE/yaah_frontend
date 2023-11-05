@@ -1,6 +1,6 @@
 import './Auth.css';
 
-function RegistrationPage() {
+function RegistrationForm() {
   return (
     <div>
       <h1>It is Registration Page</h1>
@@ -8,4 +8,4 @@ function RegistrationPage() {
   );
 }
 
-export default RegistrationPage;
+export default RegistrationForm;

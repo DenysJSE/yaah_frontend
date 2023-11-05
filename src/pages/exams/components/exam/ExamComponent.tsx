@@ -1,10 +1,10 @@
-import './ExamComponent.css';
-import Button from '../../../../components/button.tsx';
-import { useParams } from 'react-router-dom';
+import Close from '@assets/Images/ContentImages/close.png';
+import Button from '@components/button.tsx';
+import examData from '@data/ExamCardsData.json';
+import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import { useState } from 'react';
-import examData from '../../../../data/ExamCardsData.json';
-import NotFoundPage from '../../../not found page/NotFoundPage.tsx';
-import Close from '../../../../assets/Images/ContentImages/close.png';
+import { useParams } from 'react-router-dom';
+import './ExamComponent.css';
 
 type Option = {
   id: number;
@@ -23,7 +23,7 @@ function ExamComponent() {
   if (!id) {
     return <NotFoundPage />;
   }
-  const exam = examData.find((exam) => exam.id === parseInt(id));
+  const exam = examData.find(exam => exam.id === parseInt(id));
   if (!exam) {
     return <NotFoundPage extraMessage={'The exam with such id not found!'} />;
   }
@@ -40,7 +40,7 @@ function ExamComponent() {
   const handleContinue = () => {
     if (currentQuestionIndex < exam.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setProgress((currentQuestionIndex + 1) * (100 / (exam.questions.length)));
+      setProgress((currentQuestionIndex + 1) * (100 / exam.questions.length));
       setPassedQuestions(currentQuestionIndex + 1);
       setSelectedOption(null);
       setContinueEnabled(false);
@@ -59,7 +59,12 @@ function ExamComponent() {
     <div className='exam-component'>
       <div className='exam-header-footer'>
         <div className='ehf-component'>
-          <img src={Close} alt='closeIcon' className='exam-component-close-icon' onClick={handleCloseExam} />
+          <img
+            src={Close}
+            alt='closeIcon'
+            className='exam-component-close-icon'
+            onClick={handleCloseExam}
+          />
           <div className='progress-bar'>
             <div className='progress' style={{ width: `${progress}%` }}></div>
           </div>
@@ -71,14 +76,20 @@ function ExamComponent() {
           <h1 className='exam-component-main-question'>You passed the exam!</h1>
         ) : (
           <>
-            <h1 className='exam-component-main-question'>{currentQuestion.question}</h1>
-            {currentQuestion.options.map((option) => (
+            <h1 className='exam-component-main-question'>
+              {currentQuestion.question}
+            </h1>
+            {currentQuestion.options.map(option => (
               <div
-                className={`exam-component-main-option ${selectedOption === option ? 'active' : ''}`}
+                className={`exam-component-main-option ${
+                  selectedOption === option ? 'active' : ''
+                }`}
                 key={option.id}
                 onClick={() => handleOptionClick(option)}
               >
-                <p className='exam-component-main-option-text'>{option.option}</p>
+                <p className='exam-component-main-option-text'>
+                  {option.option}
+                </p>
               </div>
             ))}
           </>

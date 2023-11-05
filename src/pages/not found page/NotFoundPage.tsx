@@ -1,13 +1,13 @@
-import './NotFoundPage.css';
-import Button from '../../components/button.tsx';
+import Ghost from '@assets/Images/ContentImages/ghost.png';
+import Button from '@components/button.tsx';
 import { Link } from 'react-router-dom';
-import Ghost from '../../assets/Images/ContentImages/ghost.png';
+import './NotFoundPage.css';
 
 interface INotFoundPage {
-  extraMessage?: string
+  extraMessage?: string;
 }
 
-function NotFoundPage({extraMessage}: INotFoundPage) {
+function NotFoundPage({ extraMessage }: INotFoundPage) {
   return (
     <div className='not-found-page'>
       <img src={Ghost} alt='ghostIcon' className='not-found-page-ghost-image' />

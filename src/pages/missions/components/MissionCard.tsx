@@ -1,5 +1,5 @@
+import MissionLogo from '@assets/Images/ContentImages/Icon.png';
 import './MissionCard.css';
-import MissionLogo from '../../../assets/Images/ContentImages/Icon.png';
 
 interface MissionInterface {
   title: string;

@@ -1,7 +1,7 @@
-import './LessonsPage.css';
-import LessonCard from './components/card/LessonCard.tsx';
+import lessonsData from '@data/LessonsData.json';
 import { useState } from 'react';
-import lessonsData from '../../data/LessonsData.json';
+import LessonCard from './components/card/LessonCard.tsx';
+import './LessonsPage.css';
 
 function LessonsPage() {
   const subjects = [

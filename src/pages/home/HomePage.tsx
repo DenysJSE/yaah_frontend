@@ -1,10 +1,10 @@
-import './Home.css';
-import RecommendCard from './components/recommendation card/RecommendCard.tsx';
-import RecommendIcon from '../../assets/Images/ContentImages/Icon.png';
-import MissionCard from './components/mission card/MissionCard.tsx';
+import RecommendIcon from '@assets/Images/ContentImages/Icon.png';
+import missionsData from '@data/MissionsData.json';
+import recommendationData from '@data/RecommendationCardsData.json';
 import ContinueLearnCard from './components/continue learning card/ContinueLearnCard.tsx';
-import recommendationData from '../../data/RecommendationCardsData.json';
-import missionsData from '../../data/MissionsData.json';
+import MissionCard from './components/mission card/MissionCard.tsx';
+import RecommendCard from './components/recommendation card/RecommendCard.tsx';
+import './Home.css';
 
 function HomePage() {
   const recommendation = recommendationData;

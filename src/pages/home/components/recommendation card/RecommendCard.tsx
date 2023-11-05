@@ -1,5 +1,5 @@
+import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
 import './RecommendCard.css';
-import CardAdditionalInfo from '../../../../components/CardAdditionalInfo.tsx';
 
 interface RecommendationCardInterface {
   RecommendationLogo: string;

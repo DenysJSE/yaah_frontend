@@ -1,7 +1,7 @@
-import './Exams.css';
-import ExamCard from './components/card/ExamCard.tsx';
-import ExamsData from '../../data/ExamCardsData.json';
+import ExamsData from '@data/ExamCardsData.json';
 import { useState } from 'react';
+import ExamCard from './components/card/ExamCard.tsx';
+import './Exams.css';
 
 function ExamsPage() {
   const subjects = [
@@ -27,28 +27,28 @@ function ExamsPage() {
 
   return (
     <div className='exam-page-content'>
-        <div className='exam-page-subject-titles'>
-          {subjects.map(subject => (
-            <h3
-              key={subject}
-              className={`exam-page-subject-title ${
-                selectedSubject === subject ? 'subject-title-selected' : ''
-              }`}
-              onClick={() => handleSubjectChange(subject)}
-            >
-              {subject}
-            </h3>
-          ))}
-        </div>
+      <div className='exam-page-subject-titles'>
+        {subjects.map(subject => (
+          <h3
+            key={subject}
+            className={`exam-page-subject-title ${
+              selectedSubject === subject ? 'subject-title-selected' : ''
+            }`}
+            onClick={() => handleSubjectChange(subject)}
+          >
+            {subject}
+          </h3>
+        ))}
+      </div>
       <div className='exam-page-exam-cards'>
         {filteredExams.map((exam, index) => (
-        <ExamCard
-          key={index}
-          id={exam.id}
-          title={exam.title}
-          subjectTitle={exam.subjectTitle}
-          testAmount={`${exam.testAmount} tests`}
-        />
+          <ExamCard
+            key={index}
+            id={exam.id}
+            title={exam.title}
+            subjectTitle={exam.subjectTitle}
+            testAmount={`${exam.testAmount} tests`}
+          />
         ))}
       </div>
     </div>

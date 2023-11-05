@@ -1,16 +1,16 @@
-import './Header.css';
-import XpLogo from '../../assets/Images/HeaderImages/expirience.png';
-import XpLogoDark from '../../assets/Images/HeaderImages/expirience_dark.png';
-import NotificationLogo from '../../assets/Images/HeaderImages/notif.png';
-import NotificationLogoDark from '../../assets/Images/HeaderImages/notif_dark.png';
-import UserLogo from '../../assets/Images/HeaderImages/userlogo.jpg';
-import { useLocation } from 'react-router-dom';
+import XpLogo from '@assets/Images/HeaderImages/expirience.png';
+import XpLogoDark from '@assets/Images/HeaderImages/expirience_dark.png';
+import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
+import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
+import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
+import ProfilePopUp from '@layouts/profile popup menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
-import ProfilePopUp from '../profile popup menu/ProfilePopUp.tsx';
+import { useLocation } from 'react-router-dom';
+import './Header.css';
 
 interface HeaderInterface {
   isDark: boolean;
-  setIsDark: (isDark: boolean) => void
+  setIsDark: (isDark: boolean) => void;
 }
 
 function Header({ isDark, setIsDark }: HeaderInterface) {
@@ -20,7 +20,7 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
 
   useEffect(() => {
     const routeToTitle: { [key: string]: string } = {
-      '/': 'Home',
+      '/home': 'Home',
       '/lessons': 'Lessons',
       '/exams': 'Exams',
       '/achievements': 'Achievements',
@@ -69,14 +69,14 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
           >
             <img src={UserLogo} alt='userLogo' className='header-user-logo' />
           </div>
-          {isProfileVisible &&
+          {isProfileVisible && (
             <div
               onMouseEnter={handleProfileHover}
               onMouseLeave={handleProfileLeave}
             >
               <ProfilePopUp isDark={isDark} setIsDark={setIsDark} />
             </div>
-          }
+          )}
         </div>
       </div>
     </header>
