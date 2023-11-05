@@ -1,9 +1,12 @@
-// actions.js
 export const SET_SELECTED_SUBJECT = 'SET_SELECTED_SUBJECT';
 
 interface SetSelectedSubjectAction {
   type: typeof SET_SELECTED_SUBJECT;
   payload: string;
+}
+
+interface SubjectState {
+  selectedSubject: string;
 }
 
 export const setSelectedSubject = (
@@ -14,11 +17,6 @@ export const setSelectedSubject = (
     payload: subject
   };
 };
-
-// reducers.js
-interface SubjectState {
-  selectedSubject: string;
-}
 
 const initialState: SubjectState = {
   selectedSubject: 'All'
