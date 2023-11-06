@@ -24,6 +24,11 @@
   font-size: 24px;
 }
 
+.header-lesson-back-button {
+  width: 40px;
+  cursor: pointer;
+}
+
 .header-user-info {
   display: flex;
   align-items: center;
@@ -67,17 +72,20 @@
   }
 }
 
+@media (max-width: 500px) {
+  .header {
+    padding: 25px;
+  }
 
+  .header-title-text {
+    font-size: 20px;
+  }
 
+  .header-xp-notification-image {
+    width: 20px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  .header-user-logo {
+    width: 40px;
+  }
+}

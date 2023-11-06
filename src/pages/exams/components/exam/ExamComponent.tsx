@@ -37,6 +37,10 @@ function ExamComponent() {
     setContinueEnabled(true);
   };
 
+  const clearSelectedOption = () => {
+    setSelectedOption(null);
+  };
+
   const handleContinue = () => {
     if (currentQuestionIndex < exam.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -86,6 +90,7 @@ function ExamComponent() {
                 }`}
                 key={option.id}
                 onClick={() => handleOptionClick(option)}
+                onMouseOut={clearSelectedOption}
               >
                 <p className='exam-component-main-option-text'>
                   {option.option}

@@ -20,3 +20,18 @@
 .exam-card-title {
   font-size: 18px;
 }
+
+@media (max-width: 500px) {
+  .exam-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .exam-card-logo {
+    width: 40px;
+  }
+
+  .exam-card-title {
+    font-size: 16px;
+  }
+}

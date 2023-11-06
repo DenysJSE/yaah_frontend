@@ -14,3 +14,9 @@
     padding: 0 50px;
   }
 }
+
+@media (max-width: 500px) {
+  .missions-page {
+    padding: 0 25px;
+  }
+}

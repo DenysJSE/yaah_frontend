@@ -12,3 +12,29 @@
   margin-top: 24px;
   font-size: 20px;
 }
+
+@media (max-width: 1800px) {
+  .lesson-component {
+    margin: 0 50px;
+    padding: 24px 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .lesson-component {
+    margin: 0 25px;
+    padding: 0;
+    border: none;
+    background-color: var(--app-background-color);
+  }
+
+  .lesson-component-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .lesson-component-data {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}

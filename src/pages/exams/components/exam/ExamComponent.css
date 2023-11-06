@@ -65,3 +65,23 @@
 .exam-component-main-option.active {
   border: 2px solid var(--exam-card-option-active)
 }
+
+@media (max-width: 1800px) {
+  .exam-main {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .progress-bar {
+    width: 250px;
+  }
+
+  .exam-main {
+    padding: 100px 25px;
+  }
+
+  .exam-component-main-question {
+    font-size: 24px;
+  }
+}

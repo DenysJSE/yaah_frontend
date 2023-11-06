@@ -99,13 +99,8 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 500px) {
+  .profile-page {
+    padding: 0 25px;
+  }
+}

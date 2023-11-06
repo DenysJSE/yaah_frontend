@@ -17,7 +17,7 @@ function LessonCard({ id, title, subjectTitle, examsAmount }: LessonInterface) {
         <div className='lesson-card-main-content'>
           <img src={LessonIcon} alt='examIcon' className='lesson-card-icon' />
           <div className='lesson-additional-info'>
-            <h2 className='exam-card-title'>{title}</h2>
+            <h2 className='lesson-card-title'>{title}</h2>
             <CardAdditionalInfo
               description={subjectTitle}
               additionalInfo={examsAmount}

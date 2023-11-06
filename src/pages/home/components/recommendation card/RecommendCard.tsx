@@ -18,7 +18,7 @@ function RecommendCard({
 }: RecommendationCardInterface) {
   return (
     <div className='recommendation-card'>
-      <img src={RecommendationLogo} alt='recommendation-card-logo' />
+      <img src={RecommendationLogo} alt='recommendation-card-logo' className='recommendation-card-logo' />
       <h2 className='recommendation-card-title'>{title}</h2>
       <p className='recommendation-card-description'>{description}</p>
       <CardAdditionalInfo description={level} additionalInfo={courseDuration} />

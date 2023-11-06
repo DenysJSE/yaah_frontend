@@ -8,13 +8,19 @@ import './ProfilePopUp.css';
 interface ProfilePopUp {
   isDark: boolean;
   setIsDark: (isDark: boolean) => void;
+  setIsProfileVisible: (isProfileVisible: boolean) => void;
 }
 
-function ProfilePopUp({ isDark, setIsDark }: ProfilePopUp) {
+function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) {
+
+  const handlePopUpClose = () => {
+    setIsProfileVisible(false)
+  }
+
   return (
     <div className='profile-pop-up'>
       <Link to={'/profile'} className='link'>
-        <div className='profile-pop-up-link ppu-profile'>
+        <div className='profile-pop-up-link ppu-profile' onClick={handlePopUpClose}>
           <img src={UserLogo} alt='userLogo' className='profile-pop-up-image' />
           <p className='profile-pop-up-title pput-profile'>My Profile</p>
         </div>
@@ -30,7 +36,7 @@ function ProfilePopUp({ isDark, setIsDark }: ProfilePopUp) {
         />
         <p className='profile-pop-up-title pput-dark-mode'>Dark Mode</p>
       </div>
-      <div className='profile-pop-up-link ppu-logout'>
+      <div className='profile-pop-up-link ppu-logout' onClick={handlePopUpClose}>
         <img src={Logout} alt='logout' className='profile-pop-up-image' />
         <p className='profile-pop-up-title pput-logout'>Logout</p>
       </div>

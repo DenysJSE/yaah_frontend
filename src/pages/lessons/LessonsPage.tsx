@@ -32,18 +32,20 @@ function LessonsPage() {
 
   return (
     <div className='lessons-page-content'>
-      <div className='lessons-page-subject-titles'>
-        {subjects.map(subject => (
-          <h3
-            key={subject}
-            className={`lessons-page-subject-title ${
-              selectedSubject === subject ? 'subject-title-selected' : ''
-            }`}
-            onClick={() => handleSubjectChange(subject)}
-          >
-            {subject}
-          </h3>
-        ))}
+      <div className='lessons-page-subject-slider'>
+        <div className='lessons-page-subject-titles'>
+          {subjects.map(subject => (
+            <h3
+              key={subject}
+              className={`lessons-page-subject-title ${
+                selectedSubject === subject ? 'subject-title-selected' : ''
+              }`}
+              onClick={() => handleSubjectChange(subject)}
+            >
+              {subject}
+            </h3>
+          ))}
+        </div>
       </div>
       <div className='lessons-page-lessons-cards'>
         {filteredLessons.map((lesson, index) => (

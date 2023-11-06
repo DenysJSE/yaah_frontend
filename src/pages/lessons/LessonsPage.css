@@ -3,10 +3,14 @@
   width: 100%;
 }
 
+.lessons-page-subject-slider {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .lessons-page-subject-titles {
   display: flex;
   gap: 32px;
-  flex-wrap: wrap;
 }
 
 .lessons-page-subject-title {
@@ -32,14 +36,34 @@
   }
 }
 
+@media (max-width: 1800px) {
+  .lessons-page-content {
+    padding: 0 50px;
+  }
+}
+
 @media (max-width: 1400px) {
   .lessons-page-lessons-cards {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 500px) {
   .lessons-page-content {
-    padding: 0 50px 100px;
+    padding: 0 25px;
+  }
+
+  .lessons-page-subject-title {
+    font-size: 14px;
+  }
+
+  .lessons-page-subject-titles {
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+
+  .lessons-page-subject-titles::-webkit-scrollbar {
+    display: none;
   }
 }

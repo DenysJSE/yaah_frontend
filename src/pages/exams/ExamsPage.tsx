@@ -32,18 +32,20 @@ function ExamsPage() {
 
   return (
     <div className='exam-page-content'>
-      <div className='exam-page-subject-titles'>
-        {subjects.map(subject => (
-          <h3
-            key={subject}
-            className={`exam-page-subject-title ${
-              selectedSubject === subject ? 'subject-title-selected' : ''
-            }`}
-            onClick={() => handleSubjectChange(subject)}
-          >
-            {subject}
-          </h3>
-        ))}
+      <div className='lessons-page-subject-slider'>
+        <div className='exam-page-subject-titles'>
+          {subjects.map(subject => (
+            <h3
+              key={subject}
+              className={`exam-page-subject-title ${
+                selectedSubject === subject ? 'subject-title-selected' : ''
+              }`}
+              onClick={() => handleSubjectChange(subject)}
+            >
+              {subject}
+            </h3>
+          ))}
+        </div>
       </div>
       <div className='exam-page-exam-cards'>
         {filteredExams.map((exam, index) => (

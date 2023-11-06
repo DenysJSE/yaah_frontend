@@ -10,7 +10,7 @@
   margin-top: 24px;
 }
 
-.title {
+.continue-learn-card-title {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -56,9 +56,26 @@
     gap: 24px;
     align-items: start;
   }
+}
 
-  .continue-learn-card-button {
-    display: flex;
-    margin: auto;
+@media (max-width: 500px) {
+  .continue-learn-card {
+    border-radius: 20px;
+  }
+
+  .continue-learn-card-image {
+    width: 40px;
+  }
+
+  .course-title {
+    font-size: 16px;
+  }
+
+  .course-passed-status {
+    font-size: 12px;
+  }
+
+  .passed-bar {
+    top: 3px;
   }
 }

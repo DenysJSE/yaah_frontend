@@ -36,5 +36,14 @@
   }
 }
 
+@media (max-width: 500px) {
+  .profile-pop-up {
+    right: 25px;
+    width: 230px;
+    padding: 16px 12px;
+  }
 
-
+  .profile-pop-up-image {
+    width: 20px;
+  }
+}

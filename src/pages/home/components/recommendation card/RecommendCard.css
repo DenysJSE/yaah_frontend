@@ -17,3 +17,23 @@
   margin-top: 8px;
   color: var(--app-description-color);
 }
+
+@media (max-width: 500px) {
+  .recommendation-card {
+    margin-top: 16px;
+    border-radius: 20px;
+  }
+
+  .recommendation-card-logo {
+    width: 48px;
+  }
+
+  .recommendation-card-title {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .recommendation-card-description {
+    font-size: 14px;
+  }
+}

@@ -3,7 +3,7 @@ import XpLogoDark from '@assets/Images/HeaderImages/expirience_dark.png';
 import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
 import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
 import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
-import Button from '@components/button.tsx';
+import BackButton from '@assets/Images/ContentImages/left.png'
 import ProfilePopUp from '@layouts/profile popup menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -47,7 +47,7 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
         <div className='header-title'>
           {location.pathname.startsWith('/lesson/') ? (
             <div onClick={() => history.back()}>
-              <Button text={'Back'} />
+              <img src={BackButton} alt='backButton' className='header-lesson-back-button'/>
             </div>
           ) : (
             <h1 className='header-title-text'>{pageTitle}</h1>
@@ -74,14 +74,14 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
             onMouseEnter={handleProfileHover}
             onMouseLeave={handleProfileLeave}
           >
-            <img src={UserLogo} alt='userLogo' className='header-user-logo' />
+          <img src={UserLogo} alt='userLogo' className='header-user-logo' onClick={() => setIsProfileVisible(!isProfileVisible)} />
           </div>
           {isProfileVisible && (
             <div
               onMouseEnter={handleProfileHover}
               onMouseLeave={handleProfileLeave}
             >
-              <ProfilePopUp isDark={isDark} setIsDark={setIsDark} />
+              <ProfilePopUp isDark={isDark} setIsDark={setIsDark} setIsProfileVisible={setIsProfileVisible} />
             </div>
           )}
         </div>

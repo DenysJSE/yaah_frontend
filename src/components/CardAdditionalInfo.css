@@ -12,3 +12,11 @@
   background-color: var(--app-description-color);
   border-radius: 10px;
 }
+
+@media (max-width: 500px) {
+  .recommendation-level-duration {
+    font-size: 12px;
+    gap: 6px;
+    margin-top: 4px;
+  }
+}
