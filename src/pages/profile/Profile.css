@@ -111,4 +111,36 @@
   .profile-page-member-date {
     font-size: 14px;
   }
+
+  .profile-page-edit-form {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .profile-page-edit-form-header-title {
+    font-size: 24px;
+  }
+
+  .profile-page-edit-form-header-close-button {
+    width: 16px;
+  }
+
+  .edit-profile-input {
+    gap: 8px;
+  }
+
+  .edit-profile-inputs {
+    margin: 0;
+  }
+
+  .edit-profile-input-field {
+    width: 250px;
+    height: 35px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .edit-profile-button-save {
+    margin-top: 8px;
+  }
 }
