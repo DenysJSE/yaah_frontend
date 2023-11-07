@@ -103,4 +103,12 @@
   .profile-page {
     padding: 0 25px;
   }
+
+  .profile-page-user-nickname {
+    font-size: 26px;
+  }
+
+  .profile-page-member-date {
+    font-size: 14px;
+  }
 }

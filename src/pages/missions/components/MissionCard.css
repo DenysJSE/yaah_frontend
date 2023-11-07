@@ -30,3 +30,22 @@
 .mission-card-description {
  color: var(--app-description-color);
 }
+
+@media (max-width: 500px) {
+  .mission-card {
+    border-radius: 20px;
+    padding: 24px;
+  }
+
+  .mission-card-logo {
+    width: 40px;
+  }
+
+  .mission-card-title {
+    font-size: 16px;
+  }
+
+  .mission-card-description {
+    font-size: 14px;
+  }
+}
