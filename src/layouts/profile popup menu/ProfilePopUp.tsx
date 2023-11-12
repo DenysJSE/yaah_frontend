@@ -12,7 +12,8 @@ interface ProfilePopUp {
 }
 
 function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) {
-
+  const isLogged = false
+  
   const handlePopUpClose = () => {
     setIsProfileVisible(false)
   }
@@ -20,7 +21,10 @@ function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) 
   return (
     <div className='profile-pop-up'>
       <Link to={'/profile'} className='link'>
-        <div className='profile-pop-up-link ppu-profile' onClick={handlePopUpClose}>
+        <div
+          className='profile-pop-up-link ppu-profile'
+          onClick={handlePopUpClose}
+        >
           <img src={UserLogo} alt='userLogo' className='profile-pop-up-image' />
           <p className='profile-pop-up-title pput-profile'>My Profile</p>
         </div>
@@ -36,10 +40,15 @@ function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) 
         />
         <p className='profile-pop-up-title pput-dark-mode'>Dark Mode</p>
       </div>
-      <div className='profile-pop-up-link ppu-logout' onClick={handlePopUpClose}>
-        <img src={Logout} alt='logout' className='profile-pop-up-image' />
-        <p className='profile-pop-up-title pput-logout'>Logout</p>
-      </div>
+      <Link to={'/auth'} className='link'>
+        <div
+          className='profile-pop-up-link ppu-logout'
+          onClick={handlePopUpClose}
+        >
+          <img src={Logout} alt='logout' className='profile-pop-up-image' />
+            <p className='profile-pop-up-title pput-logout'>{isLogged ? 'Logout' : 'Login'}</p>
+        </div>
+      </Link>
     </div>
   );
 }

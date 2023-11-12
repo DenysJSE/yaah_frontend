@@ -31,7 +31,7 @@ function App() {
             <Header isDark={isDark} setIsDark={setIsDark} />
             <div className='app-page'>
               <Routes>
-                <Route path={'/home'} element={<HomePage />} />
+                <Route path={'/'} element={<HomePage />} />
                 <Route path={'/auth'} element={<AuthPage />} />
                 <Route path={'/lessons'} element={<LessonsPage />} />
                 <Route path={'/lesson/:id'} element={<LessonComponent />} />
