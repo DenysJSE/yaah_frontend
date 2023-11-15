@@ -1,4 +1,5 @@
 import '@assets/Global.css';
+import PrivateRoute from '@components/PrivateRoute.tsx';
 import Header from '@layouts/header/Header.tsx';
 import Sidebar from '@layouts/sidebar/Sidebar.tsx';
 import AuthPage from '@pages/auth/AuthPage.tsx';
@@ -31,14 +32,16 @@ function App() {
             <Header isDark={isDark} setIsDark={setIsDark} />
             <div className='app-page'>
               <Routes>
-                <Route path={'/'} element={<HomePage />} />
-                <Route path={'/auth'} element={<AuthPage />} />
-                <Route path={'/lessons'} element={<LessonsPage />} />
-                <Route path={'/lesson/:id'} element={<LessonComponent />} />
-                <Route path={'/exams'} element={<ExamsPage />} />
-                <Route path={'/exam/:id'} element={<ExamComponent />} />
-                <Route path={'/missions'} element={<MissionsPage />} />
-                <Route path={'/profile'} element={<Profile />} />
+                <Route element={<PrivateRoute />}>
+                  <Route path={'/home'} element={<HomePage />} />
+                  <Route path={'/lessons'} element={<LessonsPage />} />
+                  <Route path={'/lesson/:id'} element={<LessonComponent />} />
+                  <Route path={'/exams'} element={<ExamsPage />} />
+                  <Route path={'/exam/:id'} element={<ExamComponent />} />
+                  <Route path={'/missions'} element={<MissionsPage />} />
+                  <Route path={'/profile'} element={<Profile />} />
+                </Route>
+                <Route path={'/'} element={<AuthPage />} />
                 <Route path={'*'} element={<NotFoundPage />} />
               </Routes>
             </div>

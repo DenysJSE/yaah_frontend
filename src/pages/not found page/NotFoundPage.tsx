@@ -17,7 +17,7 @@ function NotFoundPage({ extraMessage }: INotFoundPage) {
       </p>
       <p className='not-found-page-description'>{extraMessage}</p>
       <div className='not-found-page-button'>
-        <Link to={'/'}>
+        <Link to={'/home'}>
           <Button text={'Back to Home'} />
         </Link>
       </div>

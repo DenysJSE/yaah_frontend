@@ -2,6 +2,7 @@ import UserLogo from '@assets/Images/ContentImages/user.png';
 import DarkMode from '@assets/Images/SideBarImages/dark_mode.png';
 import LightMode from '@assets/Images/SideBarImages/light_mode.png';
 import Logout from '@assets/Images/SideBarImages/logout.png';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProfilePopUp.css';
 
@@ -12,10 +13,16 @@ interface ProfilePopUp {
 }
 
 function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) {
-  const isLogged = false
+  const [isLogged, setIsLogged] = useState(!!localStorage.getItem('authToken'));
   
   const handlePopUpClose = () => {
     setIsProfileVisible(false)
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken')
+    setIsLogged(false)
+    handlePopUpClose()
   }
 
   return (
@@ -40,13 +47,13 @@ function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) 
         />
         <p className='profile-pop-up-title pput-dark-mode'>Dark Mode</p>
       </div>
-      <Link to={'/auth'} className='link'>
+      <Link to={'/'} className='link'>
         <div
           className='profile-pop-up-link ppu-logout'
-          onClick={handlePopUpClose}
+          onClick={handleLogout}
         >
           <img src={Logout} alt='logout' className='profile-pop-up-image' />
-            <p className='profile-pop-up-title pput-logout'>{isLogged ? 'Logout' : 'Login'}</p>
+          <p className='profile-pop-up-title pput-logout'>{isLogged ? 'Logout' : 'Login'}</p>
         </div>
       </Link>
     </div>
