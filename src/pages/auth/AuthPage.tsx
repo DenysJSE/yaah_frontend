@@ -23,7 +23,8 @@ function AuthPage() {
   const handleLogin = async (userData: IUserData) => {
     try {
       const response = await login(userData);
-      const { token } = response;
+      const token = response.token;
+      localStorage.setItem('user', JSON.stringify(response.user))
       localStorage.setItem('authToken', token)
       toast.success('Login successful')
       navigate('/home')
@@ -36,7 +37,7 @@ function AuthPage() {
   const handleRegistration = async (userData: IUserData) => {
     try {
       const response = await register(userData);
-      const { token } = response;
+      const token = response.token;
       localStorage.setItem('authToken', token)
       toast.success('Registration successful')
       navigate('/home')

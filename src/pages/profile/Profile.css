@@ -84,6 +84,7 @@
 }
 
 .edit-profile-input-field:focus {
+  padding: 0 18px;
   border: 2px solid var(--exam-card-option-active);
 }
 
