@@ -1,5 +1,6 @@
-import lessonsData from '@data/LessonsData.json';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getLessons, ILesson } from '../../services/LessonServise.ts';
 import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
 import { RootState } from '../../store/store.ts';
 import LessonCard from './components/card/LessonCard.tsx';
@@ -11,6 +12,8 @@ function LessonsPage() {
   );
   const dispatch = useDispatch();
 
+  const [lessons, setLessons] = useState<ILesson[]>([])
+
   const subjects = [
     'All',
     'English Language',
@@ -21,14 +24,27 @@ function LessonsPage() {
     'Literature'
   ];
 
+  useEffect(() => {
+    const fetchLessons = async () => {
+      try {
+        const response = await getLessons()
+        setLessons(response)
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    fetchLessons()
+  }, [])
+
   const handleSubjectChange = (subject: string) => {
     dispatch(setSelectedSubject(subject));
   };
 
   const filteredLessons =
     selectedSubject === 'All'
-      ? lessonsData
-      : lessonsData.filter(lesson => lesson.subjectTitle === selectedSubject);
+      ? lessons
+      : lessons.filter(lesson => lesson.lesson.subject.title === selectedSubject);
 
   return (
     <div className='lessons-page-content'>
@@ -52,9 +68,9 @@ function LessonsPage() {
           <LessonCard
             key={index}
             id={lesson.id}
-            title={lesson.title}
-            subjectTitle={lesson.subjectTitle}
-            examsAmount={lesson.examsAmount}
+            title={lesson.lesson.title}
+            subjectTitle={lesson.lesson.subject.title}
+            examsAmount={lesson.lesson.award.toString()}
           />
         ))}
       </div>
