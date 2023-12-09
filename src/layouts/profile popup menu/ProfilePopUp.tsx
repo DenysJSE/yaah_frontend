@@ -13,14 +13,14 @@ interface ProfilePopUp {
 }
 
 function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) {
-  const [isLogged, setIsLogged] = useState(!!localStorage.getItem('authToken'));
+  const [isLogged, setIsLogged] = useState(!!localStorage.getItem('token'));
   
   const handlePopUpClose = () => {
     setIsProfileVisible(false)
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken')
+    localStorage.removeItem('token')
     setIsLogged(false)
     handlePopUpClose()
   }

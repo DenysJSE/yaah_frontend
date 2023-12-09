@@ -58,6 +58,7 @@ html {
   --progress-bar-background: #1A1D1F;
   --passed-bar: #30638E;
   --lessons-card-title-lesson: #9DD6FF;
+  --lesson-card-done: #35CE8D;
 
   /* Achievements Colors */
   --achievements-complete-color: #AAFF68;

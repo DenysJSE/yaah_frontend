@@ -14,10 +14,30 @@ interface HeaderInterface {
   setIsDark: (isDark: boolean) => void;
 }
 
+interface IUser {
+  id: number,
+  nickname: string,
+  email: string,
+  coins: number,
+  roles: {
+    id: number,
+    value: string,
+    description: string
+  }
+}
+
 function Header({ isDark, setIsDark }: HeaderInterface) {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState('');
   const [isProfileVisible, setIsProfileVisible] = useState(false);
+  const [user, setUser] = useState<IUser | null>(null);
+
+  useEffect(() => {
+    const storedUserString = localStorage.getItem('user');
+    const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
+
+    setUser(storedUser)
+  }, []);
 
   useEffect(() => {
     const routeToTitle: { [key: string]: string } = {
@@ -60,7 +80,7 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
               alt='xpLogo'
               className='header-xp-notification-image'
             />
-            <span className='header-xp-amount'>500</span>
+            <span className='header-xp-amount'>{user?.coins}</span>
           </div>
           <div className='header-user-info-div notification'>
             <img

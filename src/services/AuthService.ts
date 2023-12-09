@@ -1,51 +1,23 @@
-const API_URL = 'http://localhost:5000/api'; // Replace with your actual backend URL
+import api from '../http/index.ts'
 
-interface IUserData {
-  nickname?: string,
+interface IUserLogin {
   email: string,
   password: string
 }
 
-export const login = async (userData: IUserData) => {
-  try {
-    const response = await fetch(`${API_URL}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
+//TODO: Brought out types to file
+interface IUserRegistration {
+  email: string,
+  password: string
+  nickname: string
+}
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Login failed');
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Login error:', error);
-    throw error;
+export default class AuthService {
+  static async login({ email, password }: IUserLogin) {
+    return api.post('/auth/login', { email, password });
   }
-};
 
-export const register = async (userData: IUserData) => {
-  try {
-    const response = await fetch(`${API_URL}/auth/registration`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Registration failed');
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Registration error:', error);
-    throw error;
+  static async registration({ email, password, nickname }: IUserRegistration) {
+    return api.post('/auth/registration', { email, password, nickname });
   }
-};
+}

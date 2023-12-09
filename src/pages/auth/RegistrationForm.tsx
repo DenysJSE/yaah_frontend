@@ -1,29 +1,14 @@
 import './Auth.css';
-import { IUserData } from '@pages/auth/AuthPage.tsx';
-import { FormEvent, useState } from 'react';
-import { toast } from 'react-toastify';
 
 interface IRegistrationForm {
   handleAuthMode: () => void;
-  onSubmit: (userData: IUserData) => Promise<void>;
+  handleEmailChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleNicknameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
-function RegistrationForm({handleAuthMode, onSubmit}: IRegistrationForm) {
-  const [nickname, setNickname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!nickname || !email || !password) {
-      toast.error('Nickname, email and password are required');
-      return;
-    }
-
-    onSubmit({ nickname, email, password });
-  };
-
+function RegistrationForm({handleAuthMode, handleEmailChange, handlePasswordChange, handleNicknameChange, handleSubmit}: IRegistrationForm) {
   return (
     <div className='auth-form'>
       <div className='auth-form-title-subtitle'>
@@ -34,15 +19,15 @@ function RegistrationForm({handleAuthMode, onSubmit}: IRegistrationForm) {
         <div className='auth-form-inputs'>
           <div className='auth-form-inputs-input'>
             <label htmlFor='auth-form-input-nickname' className='auth-form-input-label'>Nickname</label>
-            <input type='text' className='auth-form-input' id='auth-form-input-nickname' value={nickname} onChange={(e) => setNickname(e.target.value)} />
+            <input type='text' className='auth-form-input' id='auth-form-input-nickname' onChange={handleNicknameChange} />
           </div>
           <div className='auth-form-inputs-input'>
             <label htmlFor='auth-form-input-email' className='auth-form-input-label'>Email</label>
-            <input type='text' className='auth-form-input' id='auth-form-input-email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type='text' className='auth-form-input' id='auth-form-input-email' onChange={handleEmailChange} />
           </div>
           <div className='auth-form-inputs-input'>
             <label htmlFor='auth-form-input-password' className='auth-form-input-label'>Password</label>
-            <input type='password' className='auth-form-input' id='auth-form-input-password' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type='password' className='auth-form-input' id='auth-form-input-password' onChange={handlePasswordChange} />
           </div>
         </div>
         <div className='auth-form-input-button'>

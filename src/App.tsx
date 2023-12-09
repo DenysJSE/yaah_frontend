@@ -9,20 +9,23 @@ import LessonsPage from '@pages/lessons/LessonsPage.tsx';
 import MissionsPage from '@pages/missions/MissionsPage.tsx';
 import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import Profile from '@pages/profile/Profile.tsx';
-import { Provider } from 'react-redux';
+import { createContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 import ExamComponent from './pages/exams/components/exam/ExamComponent.tsx';
-
 import LessonComponent from './pages/lessons/components/lesson/LessonComponent.tsx';
-import store from './store/store.ts';
+import userStore from './store/user/userStore.tsx';
+
+export const Context = createContext({
+  store: userStore
+})
 
 function App() {
   const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDark, setIsDark] = useLocalStorage('isDark', preference);
 
   return (
-    <Provider store={store}>
+    <Context.Provider value={{store: userStore}}>
       <BrowserRouter>
         <div className='App' data-theme={isDark ? 'dark' : ''}>
           <div className='app-sidebar'>
@@ -48,7 +51,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
-    </Provider>
+    </Context.Provider>
   );
 }
 

@@ -1,10 +1,10 @@
 import Close from '@assets/Images/ContentImages/close.png';
 import Button from '@components/button.tsx';
-import examData from '@data/ExamCardsData.json';
 import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ExamComponent.css';
+import exams from '@data/ExamCardsData.json'
 
 type Option = {
   id: number;
@@ -23,7 +23,7 @@ function ExamComponent() {
   if (!id) {
     return <NotFoundPage />;
   }
-  const exam = examData.find(exam => exam.id === parseInt(id));
+  const exam = exams.find(exam => exam.id === parseInt(id));
   if (!exam) {
     return <NotFoundPage extraMessage={'The exam with such id not found!'} />;
   }
@@ -73,6 +73,7 @@ function ExamComponent() {
       </div>
       <div className='exam-main'>
         {showPassedMessage ? (
+          //You passed the exam!<br/>You have {correctAnswers} correct answers
           <h1 className='exam-component-main-question'>You passed the exam!</h1>
         ) : (
           <>

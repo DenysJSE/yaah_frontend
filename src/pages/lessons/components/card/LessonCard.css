@@ -21,6 +21,12 @@
   font-size: 18px;
 }
 
+.lesson-card-is-done {
+  font-size: 20px;
+  color: var(--lesson-card-done);
+  margin-left: auto;
+}
+
 @media (max-width: 500px) {
   .lesson-card {
     padding: 16px;

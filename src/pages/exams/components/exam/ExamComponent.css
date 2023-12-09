@@ -66,6 +66,10 @@
   border: 2px solid var(--exam-card-option-active)
 }
 
+.exam-component-main-question {
+  text-align: center;
+}
+
 @media (max-width: 1800px) {
   .exam-main {
     padding: 100px 50px;

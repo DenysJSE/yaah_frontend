@@ -8,6 +8,7 @@ interface ExamInterface {
   title: string;
   subjectTitle: string;
   testAmount: string;
+  // isDone: boolean
 }
 
 function ExamCard({ id, title, subjectTitle, testAmount }: ExamInterface) {
@@ -23,6 +24,7 @@ function ExamCard({ id, title, subjectTitle, testAmount }: ExamInterface) {
               additionalInfo={testAmount}
             />
           </div>
+          {/*{isDone && <p className='lesson-card-is-done'>Done</p>}*/}
         </div>
       </div>
     </Link>

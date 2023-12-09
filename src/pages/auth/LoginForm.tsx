@@ -1,28 +1,14 @@
 import './Auth.css';
-import { IUserData } from '@pages/auth/AuthPage.tsx';
-import { FormEvent, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
 
 interface ILoginForm {
   handleAuthMode: () => void;
-  onSubmit: (userData: IUserData) => Promise<void>;
+  handleEmailChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
-function LoginForm({handleAuthMode, onSubmit}: ILoginForm) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (!email || !password) {
-      toast.error('Email and password are required');
-      return
-    }
-
-    onSubmit({ email, password });
-  }
+function LoginForm({handleAuthMode, handleEmailChange, handlePasswordChange, handleSubmit}: ILoginForm) {
 
   return (
     <div className='auth-form'>
@@ -34,11 +20,11 @@ function LoginForm({handleAuthMode, onSubmit}: ILoginForm) {
         <div className='auth-form-inputs'>
           <div className='auth-form-inputs-input'>
             <label htmlFor='auth-form-input-email' className='auth-form-input-label'>Email</label>
-            <input type='email' className='auth-form-input' id='auth-form-input-email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type='email' className='auth-form-input' id='auth-form-input-email' onChange={handleEmailChange} />
           </div>
           <div className='auth-form-inputs-input'>
             <label htmlFor='auth-form-input-password' className='auth-form-input-label'>Password</label>
-            <input type='password' className='auth-form-input' id='auth-form-input-password' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type='password' className='auth-form-input' id='auth-form-input-password' onChange={handlePasswordChange} />
           </div>
         </div>
         <div className='auth-form-input-button'>

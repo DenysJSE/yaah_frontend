@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getLessons, ILesson } from '../../services/LessonServise.ts';
-import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
-import { RootState } from '../../store/store.ts';
+import { useState } from 'react';
 import LessonCard from './components/card/LessonCard.tsx';
 import './LessonsPage.css';
+import lessonsData from '@data/LessonsData.json';
 
 function LessonsPage() {
-  const selectedSubject = useSelector(
-    (state: RootState) => state.subjects.selectedSubject
-  );
-  const dispatch = useDispatch();
-
-  const [lessons, setLessons] = useState<ILesson[]>([])
+  // const selectedSubject = useSelector(
+  //   (state: RootState) => state.subjects.selectedSubject
+  // );
+  // const dispatch = useDispatch();
 
   const subjects = [
     'All',
@@ -24,27 +19,16 @@ function LessonsPage() {
     'Literature'
   ];
 
-  useEffect(() => {
-    const fetchLessons = async () => {
-      try {
-        const response = await getLessons()
-        setLessons(response)
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    fetchLessons()
-  }, [])
+  const [selectedSubject, setSelectedSubject] = useState('All');
 
   const handleSubjectChange = (subject: string) => {
-    dispatch(setSelectedSubject(subject));
+    setSelectedSubject(subject);
   };
 
   const filteredLessons =
     selectedSubject === 'All'
-      ? lessons
-      : lessons.filter(lesson => lesson.lesson.subject.title === selectedSubject);
+      ? lessonsData
+      : lessonsData.filter(lesson => lesson.subjectTitle === selectedSubject);
 
   return (
     <div className='lessons-page-content'>
@@ -68,9 +52,10 @@ function LessonsPage() {
           <LessonCard
             key={index}
             id={lesson.id}
-            title={lesson.lesson.title}
-            subjectTitle={lesson.lesson.subject.title}
-            examsAmount={lesson.lesson.award.toString()}
+            title={lesson.title}
+            subjectTitle={lesson.subjectTitle}
+            examsAmount={lesson.examsAmount}
+            // isDone={lesson.isDone}
           />
         ))}
       </div>

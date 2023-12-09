@@ -1,9 +1,9 @@
-import ExamsData from '@data/ExamCardsData.json';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
 import { RootState } from '../../store/store.ts';
 import ExamCard from './components/card/ExamCard.tsx';
 import './Exams.css';
+import exams from '@data/ExamCardsData.json'
 
 function ExamsPage() {
   const selectedSubject = useSelector(
@@ -27,8 +27,8 @@ function ExamsPage() {
 
   const filteredExams =
     selectedSubject === 'All'
-      ? ExamsData
-      : ExamsData.filter(exam => exam.subjectTitle === selectedSubject);
+      ? exams
+      : exams.filter(exam => exam.subjectTitle === selectedSubject);
 
   return (
     <div className='exam-page-content'>
@@ -54,7 +54,8 @@ function ExamsPage() {
             id={exam.id}
             title={exam.title}
             subjectTitle={exam.subjectTitle}
-            testAmount={`${exam.testAmount} tests`}
+            testAmount={exam.testAmount}
+            // isDone={exam.isDone}
           />
         ))}
       </div>
