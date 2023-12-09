@@ -1,13 +1,48 @@
-import { useState } from 'react';
-import LessonCard from './components/card/LessonCard.tsx';
+import LessonCard from '@pages/lessons/components/card/LessonCard.tsx';
+import { useEffect, useState } from 'react';
+import LessonService from '../../services/LessonService.ts';
 import './LessonsPage.css';
-import lessonsData from '@data/LessonsData.json';
+// import lessonsData from '@data/LessonsData.json';
+
+interface ILessons {
+  id: number,
+  isDone: boolean,
+  lesson: {
+    id: number
+    title: string
+    award: string
+    lessonData: string
+    subject: {
+      id: number
+      title: string
+      description: string
+      examNumber: number
+      lessonNumber: number
+      courseDuration: number
+    }
+  }
+
+}
 
 function LessonsPage() {
   // const selectedSubject = useSelector(
   //   (state: RootState) => state.subjects.selectedSubject
   // );
   // const dispatch = useDispatch();
+  const [lessonsData, setLessonsData] = useState<ILessons[] | null>(null);
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  async function getData() {
+    try {
+      const response = await LessonService.getAllLessons();
+      setLessonsData(response.data);
+    } catch (error) {
+      console.error('Error fetching lessons:', error);
+    }
+  }
 
   const subjects = [
     'All',
@@ -28,7 +63,7 @@ function LessonsPage() {
   const filteredLessons =
     selectedSubject === 'All'
       ? lessonsData
-      : lessonsData.filter(lesson => lesson.subjectTitle === selectedSubject);
+      : lessonsData ? lessonsData.filter(lesson => lesson.lesson.subject.title === selectedSubject) : null;
 
   return (
     <div className='lessons-page-content'>
@@ -48,14 +83,14 @@ function LessonsPage() {
         </div>
       </div>
       <div className='lessons-page-lessons-cards'>
-        {filteredLessons.map((lesson, index) => (
+        {filteredLessons?.map((lesson, index) => (
           <LessonCard
             key={index}
             id={lesson.id}
-            title={lesson.title}
-            subjectTitle={lesson.subjectTitle}
-            examsAmount={lesson.examsAmount}
-            // isDone={lesson.isDone}
+            title={lesson.lesson.title}
+            subjectTitle={lesson.lesson.subject.title}
+            examsAmount={lesson.lesson.award}
+            isDone={lesson.isDone}
           />
         ))}
       </div>

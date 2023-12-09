@@ -8,10 +8,10 @@ interface LessonInterface {
   title: string;
   subjectTitle: string;
   examsAmount: string;
-  // isDone: boolean
+  isDone: boolean
 }
 
-function LessonCard({ id, title, subjectTitle, examsAmount}: LessonInterface) {
+function LessonCard({ id, title, subjectTitle, examsAmount, isDone}: LessonInterface) {
   return (
     <Link to={`/lesson/${id}`} className='link'>
       <div className='lesson-card'>
@@ -24,7 +24,7 @@ function LessonCard({ id, title, subjectTitle, examsAmount}: LessonInterface) {
               additionalInfo={examsAmount}
             />
           </div>
-          {/*{isDone && <p className='lesson-card-is-done'>Done</p>}*/}
+          {isDone && <p className='lesson-card-is-done'>Done</p>}
         </div>
       </div>
     </Link>

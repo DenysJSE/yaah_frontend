@@ -1,3 +1,11 @@
+.lesson-component-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  width: 100vw;
+}
+
 .lesson-component {
   display: flex;
   flex-direction: column;
