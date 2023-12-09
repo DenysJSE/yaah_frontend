@@ -7,11 +7,11 @@ interface ExamInterface {
   id: number;
   title: string;
   subjectTitle: string;
-  testAmount: string;
-  // isDone: boolean
+  testAward: string;
+  isDone: boolean
 }
 
-function ExamCard({ id, title, subjectTitle, testAmount }: ExamInterface) {
+function ExamCard({ id, title, subjectTitle, testAward, isDone }: ExamInterface) {
   return (
     <Link to={`/exam/${id}`} className='link'>
       <div className='exam-card'>
@@ -21,10 +21,10 @@ function ExamCard({ id, title, subjectTitle, testAmount }: ExamInterface) {
             <h2 className='exam-card-title'>{title}</h2>
             <CardAdditionalInfo
               description={subjectTitle}
-              additionalInfo={testAmount}
+              additionalInfo={testAward}
             />
           </div>
-          {/*{isDone && <p className='lesson-card-is-done'>Done</p>}*/}
+          {isDone && <p className='lesson-card-is-done'>Done</p>}
         </div>
       </div>
     </Link>

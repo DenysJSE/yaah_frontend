@@ -1,6 +1,5 @@
 import Ghost from '@assets/Images/ContentImages/ghost.png';
 import Button from '@components/button.tsx';
-import { Link } from 'react-router-dom';
 import './NotFoundPage.css';
 
 interface INotFoundPage {
@@ -8,6 +7,10 @@ interface INotFoundPage {
 }
 
 function NotFoundPage({ extraMessage }: INotFoundPage) {
+  const handleGoBack = () => {
+    history.back()
+  }
+
   return (
     <div className='not-found-page'>
       <img src={Ghost} alt='ghostIcon' className='not-found-page-ghost-image' />
@@ -16,10 +19,8 @@ function NotFoundPage({ extraMessage }: INotFoundPage) {
         We could not find the page you were looking for!
       </p>
       <p className='not-found-page-description'>{extraMessage}</p>
-      <div className='not-found-page-button'>
-        <Link to={'/home'}>
-          <Button text={'Back to Home'} />
-        </Link>
+      <div className='not-found-page-button' onClick={handleGoBack}>
+          <Button text={'Go Back'} />
       </div>
     </div>
   );

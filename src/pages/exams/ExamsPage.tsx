@@ -1,15 +1,58 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import ExamService from '../../services/ExamService.ts';
 import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
 import { RootState } from '../../store/store.ts';
 import ExamCard from './components/card/ExamCard.tsx';
 import './Exams.css';
-import exams from '@data/ExamCardsData.json'
+
+export interface IExam {
+  id: number
+  isDone: boolean
+  exam: {
+    id: number
+    award: string
+    title: string
+    description: string
+    questions: {
+      id: number
+      question: string
+      option: {
+        id: number
+        isCorrect: boolean
+        text: string
+      }
+    }
+    subject: {
+      id: number
+      title: string
+      description: string
+      courseDuration: number
+      examsNumber: number
+      lessonNumber: number
+    }
+  }
+}
 
 function ExamsPage() {
   const selectedSubject = useSelector(
     (state: RootState) => state.subjects.selectedSubject
   );
   const dispatch = useDispatch();
+  const [examData, setExamData] = useState<IExam[] | null>(null);
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  async function getData() {
+    try {
+      const response = await ExamService.getAllExams();
+      setExamData(response.data);
+    } catch (error) {
+      console.error('Error fetching lessons:', error);
+    }
+  }
 
   const subjects = [
     'All',
@@ -27,8 +70,8 @@ function ExamsPage() {
 
   const filteredExams =
     selectedSubject === 'All'
-      ? exams
-      : exams.filter(exam => exam.subjectTitle === selectedSubject);
+      ? examData
+      : examData ? examData.filter(exam => exam.exam.subject.title === selectedSubject) : null;
 
   return (
     <div className='exam-page-content'>
@@ -48,14 +91,14 @@ function ExamsPage() {
         </div>
       </div>
       <div className='exam-page-exam-cards'>
-        {filteredExams.map((exam, index) => (
+        {filteredExams?.map((exam, index) => (
           <ExamCard
             key={index}
             id={exam.id}
-            title={exam.title}
-            subjectTitle={exam.subjectTitle}
-            testAmount={exam.testAmount}
-            // isDone={exam.isDone}
+            title={exam.exam.title}
+            subjectTitle={exam.exam.subject.title}
+            testAward={exam.exam.award}
+            isDone={exam.isDone}
           />
         ))}
       </div>

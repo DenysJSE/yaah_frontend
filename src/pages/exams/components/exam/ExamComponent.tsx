@@ -1,15 +1,30 @@
 import Close from '@assets/Images/ContentImages/close.png';
 import Button from '@components/button.tsx';
 import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ExamComponent.css';
-import exams from '@data/ExamCardsData.json'
+import ExamService from '../../../../services/ExamService.ts';
 
-type Option = {
+interface Option {
   id: number;
-  option: string;
-};
+  text: string;
+  isCorrect: boolean
+}
+
+interface Question {
+  id: number;
+  question: string;
+  option: Option[];
+}
+
+interface Exam {
+  id: number;
+  isDone: boolean;
+  award: string;
+  description: string;
+  questions: Question[];
+}
 
 function ExamComponent() {
   const { id } = useParams();
@@ -19,11 +34,37 @@ function ExamComponent() {
   const [passedQuestions, setPassedQuestions] = useState(0);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const [isContinueEnabled, setContinueEnabled] = useState(false);
+  const [exam, setExam] = useState<Exam | null>(null);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchExamById = async () => {
+      try {
+        if (id) {
+          const response = await ExamService.getExamById(parseInt(id));
+          setExam(response.data.exam);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Error fetching exam:', error);
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchExamById();
+    }
+  }, [id]);
 
   if (!id) {
     return <NotFoundPage />;
   }
-  const exam = exams.find(exam => exam.id === parseInt(id));
+
+  if (loading) {
+    return <div className='lesson-component-loading'>Loading...</div>;
+  }
+
   if (!exam) {
     return <NotFoundPage extraMessage={'The exam with such id not found!'} />;
   }
@@ -35,6 +76,9 @@ function ExamComponent() {
   const handleOptionClick = (option: Option) => {
     setSelectedOption(option);
     setContinueEnabled(true);
+    if (option.isCorrect) {
+      setCorrectAnswers(correctAnswers + 1);
+    }
   };
 
   const handleContinue = () => {
@@ -73,23 +117,20 @@ function ExamComponent() {
       </div>
       <div className='exam-main'>
         {showPassedMessage ? (
-          //You passed the exam!<br/>You have {correctAnswers} correct answers
-          <h1 className='exam-component-main-question'>You passed the exam!</h1>
+          <h1 className='exam-component-main-question'>You passed the exam!<br/>You have {correctAnswers} correct answers</h1>
         ) : (
           <>
             <h1 className='exam-component-main-question'>
               {currentQuestion.question}
             </h1>
-            {currentQuestion.options.map(option => (
+            {currentQuestion.option && currentQuestion.option.map((option) => (
               <div
-                className={`exam-component-main-option ${
-                  selectedOption === option ? 'active' : ''
-                }`}
+                className={`exam-component-main-option ${selectedOption === option ? 'active' : ''}`}
                 key={option.id}
                 onClick={() => handleOptionClick(option)}
               >
                 <p className='exam-component-main-option-text'>
-                  {option.option}
+                  {option.text}
                 </p>
               </div>
             ))}

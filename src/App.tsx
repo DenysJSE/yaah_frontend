@@ -4,9 +4,9 @@ import Header from '@layouts/header/Header.tsx';
 import Sidebar from '@layouts/sidebar/Sidebar.tsx';
 import AuthPage from '@pages/auth/AuthPage.tsx';
 import ExamsPage from '@pages/exams/ExamsPage.tsx';
-import HomePage from '@pages/home/HomePage.tsx';
+// import HomePage from '@pages/home/HomePage.tsx';
 import LessonsPage from '@pages/lessons/LessonsPage.tsx';
-import MissionsPage from '@pages/missions/MissionsPage.tsx';
+// import MissionsPage from '@pages/missions/MissionsPage.tsx';
 import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import Profile from '@pages/profile/Profile.tsx';
 import { createContext } from 'react';
@@ -39,12 +39,12 @@ function App() {
               <div className='app-page'>
                 <Routes>
                   <Route element={<PrivateRoute />}>
-                    <Route path={'/home'} element={<HomePage />} />
+                    {/*<Route path={'/home'} element={<HomePage />} />*/}
                     <Route path={'/lessons'} element={<LessonsPage />} />
                     <Route path={'/lesson/:id'} element={<LessonComponent />} />
                     <Route path={'/exams'} element={<ExamsPage />} />
                     <Route path={'/exam/:id'} element={<ExamComponent />} />
-                    <Route path={'/missions'} element={<MissionsPage />} />
+                    {/*<Route path={'/missions'} element={<MissionsPage />} />*/}
                     <Route path={'/profile'} element={<Profile />} />
                   </Route>
                   <Route path={'/'} element={<AuthPage />} />
