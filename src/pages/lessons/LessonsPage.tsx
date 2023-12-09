@@ -1,7 +1,10 @@
 import LessonCard from '@pages/lessons/components/card/LessonCard.tsx';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import LessonService from '../../services/LessonService.ts';
 import './LessonsPage.css';
+import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
+import { RootState } from '../../store/store.ts';
 // import lessonsData from '@data/LessonsData.json';
 
 interface ILessons {
@@ -21,14 +24,13 @@ interface ILessons {
       courseDuration: number
     }
   }
-
 }
 
 function LessonsPage() {
-  // const selectedSubject = useSelector(
-  //   (state: RootState) => state.subjects.selectedSubject
-  // );
-  // const dispatch = useDispatch();
+  const selectedSubject = useSelector(
+    (state: RootState) => state.subjects.selectedSubject
+  );
+  const dispatch = useDispatch();
   const [lessonsData, setLessonsData] = useState<ILessons[] | null>(null);
 
   useEffect(() => {
@@ -54,10 +56,8 @@ function LessonsPage() {
     'Literature'
   ];
 
-  const [selectedSubject, setSelectedSubject] = useState('All');
-
   const handleSubjectChange = (subject: string) => {
-    setSelectedSubject(subject);
+    dispatch(setSelectedSubject(subject));
   };
 
   const filteredLessons =
