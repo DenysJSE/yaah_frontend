@@ -91,9 +91,9 @@ function ExamsPage() {
         </div>
       </div>
       <div className='exam-page-exam-cards'>
-        {filteredExams?.map((exam, index) => (
+        {filteredExams?.map((exam) => (
           <ExamCard
-            key={index}
+            key={exam.id}
             id={exam.id}
             title={exam.exam.title}
             subjectTitle={exam.exam.subject.title}

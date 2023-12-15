@@ -69,10 +69,6 @@ function ExamComponent() {
     return <NotFoundPage extraMessage={'The exam with such id not found!'} />;
   }
 
-  const handleCloseExam = () => {
-    history.back();
-  };
-
   const handleOptionClick = (option: Option) => {
     setSelectedOption(option);
     setContinueEnabled(true);
@@ -98,6 +94,15 @@ function ExamComponent() {
   };
 
   const currentQuestion = exam.questions[currentQuestionIndex];
+
+  const handleCloseExam = () => {
+    history.back()
+  }
+
+  const handleMarkAdDone = async () => {
+    await ExamService.updateIsDoneExamStatus(parseInt(id))
+    history.back()
+  }
 
   return (
     <div className='exam-component'>
@@ -139,7 +144,7 @@ function ExamComponent() {
       </div>
       <div className='exam-header-footer'>
         {showPassedMessage ? (
-          <div onClick={handleCloseExam}>
+          <div onClick={handleMarkAdDone}>
             <Button text={'Finish'} />
           </div>
         ) : (
