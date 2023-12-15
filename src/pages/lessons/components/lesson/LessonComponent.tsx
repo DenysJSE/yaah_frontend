@@ -1,3 +1,4 @@
+import Button from '@components/button.tsx';
 import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -52,6 +53,11 @@ function LessonComponent() {
     );
   }
 
+  const handleMarkAsDone = async () => {
+    await LessonService.updateIsDoneLessonStatus(parseInt(id))
+    history.back();
+  }
+
   return (
     <div className='lesson-component'>
       <div className='lesson-component-card'>
@@ -60,9 +66,9 @@ function LessonComponent() {
           <p className='lesson-component-data'>{lesson.lesson.lessonData}</p>
         </div>
       </div>
-      {/*<div className='lesson-component-button' onClick={handleMarkAsDone}>*/}
-      {/*  {!lessonData?.isDone && <Button text={'Mark ad Done'} />}*/}
-      {/*</div>*/}
+      <div className='lesson-component-button' onClick={handleMarkAsDone}>
+        {!lesson?.isDone ? <Button text={'Mark ad Done'} /> : <h1 className='lesson-component-lesson-done'>Lesson is done</h1>}
+      </div>
     </div>
 
   );

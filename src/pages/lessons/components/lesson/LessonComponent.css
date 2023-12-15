@@ -32,6 +32,10 @@
   margin-top: 24px;
 }
 
+.lesson-component-lesson-done {
+  color: var(--lesson-card-done);
+}
+
 @media (max-width: 1800px) {
   .lesson-component {
     margin: 0 50px;

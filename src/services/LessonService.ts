@@ -8,4 +8,8 @@ export default class LessonService {
   static async getLessonById(id: number) {
     return api.get(`/lessons/${id}`);
   }
+
+  static async updateIsDoneLessonStatus(id: number) {
+    return api.put(`/lessons/update_is_done/${id}`)
+  }
 }
