@@ -7,7 +7,7 @@ import ExamsPage from '@pages/exams/ExamsPage.tsx';
 // import HomePage from '@pages/home/HomePage.tsx';
 import LessonsPage from '@pages/lessons/LessonsPage.tsx';
 // import MissionsPage from '@pages/missions/MissionsPage.tsx';
-import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
+import NotFoundPage from '@pages/not-found-page/NotFoundPage.tsx';
 import Profile from '@pages/profile/Profile.tsx';
 import { createContext } from 'react';
 import { Provider } from 'react-redux';

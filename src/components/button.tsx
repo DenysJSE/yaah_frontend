@@ -3,11 +3,12 @@ import './button.css'
 interface ButtonInterface {
   text: string;
   isDisabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
-function Button({text, isDisabled}: ButtonInterface) {
+function Button({text, isDisabled, type}: ButtonInterface) {
   return (
-    <button className={`button-component ${isDisabled ? 'button-component-disable' : '' }`} disabled={isDisabled}>{text}</button>
+    <button type={type} className={`button-component ${isDisabled ? 'button-component-disable' : '' }`} disabled={isDisabled}>{text}</button>
   );
 }
 

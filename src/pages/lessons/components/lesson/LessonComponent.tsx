@@ -1,5 +1,5 @@
 import Button from '@components/button.tsx';
-import NotFoundPage from '@pages/not found page/NotFoundPage.tsx';
+import NotFoundPage from '@pages/not-found-page/NotFoundPage.tsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './LessonComponent.css';

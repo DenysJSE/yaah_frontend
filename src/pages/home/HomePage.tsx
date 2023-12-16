@@ -1,9 +1,9 @@
 import RecommendIcon from '@assets/Images/ContentImages/Icon.png';
 import missionsData from '@data/MissionsData.json';
 import recommendationData from '@data/RecommendationCardsData.json';
-import ContinueLearnCard from './components/continue learning card/ContinueLearnCard.tsx';
-import MissionCard from './components/mission card/MissionCard.tsx';
-import RecommendCard from './components/recommendation card/RecommendCard.tsx';
+import ContinueLearnCard from '@pages/home/components/continue-learning-card/ContinueLearnCard.tsx';
+import MissionCard from '@pages/home/components/mission-card/MissionCard.tsx';
+import RecommendCard from '@pages/home/components/recommendation-card/RecommendCard.tsx';
 import './Home.css';
 
 function HomePage() {

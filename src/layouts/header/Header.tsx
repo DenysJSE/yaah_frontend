@@ -4,7 +4,7 @@ import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
 import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
 import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
 import BackButton from '@assets/Images/ContentImages/left.png'
-import ProfilePopUp from '@layouts/profile popup menu/ProfilePopUp.tsx';
+import ProfilePopUp from '@layouts/profile-popup-menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Header.css';
