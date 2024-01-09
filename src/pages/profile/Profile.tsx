@@ -1,9 +1,8 @@
 import UserIcon from '@assets/Images/HeaderImages/userlogo.jpg';
 import Button from '@components/button.tsx';
 import './Profile.css';
-import { useEffect, useState } from 'react';
+import { useUser } from '@components/UserUtils.ts';
 import { Link } from 'react-router-dom';
-import UserService from '../../services/UserService.ts';
 
 export interface IUser {
   id: number;
@@ -18,16 +17,7 @@ export interface IUser {
 }
 
 function Profile() {
-  const [user, setUser] = useState<IUser | null>()
-
-  useEffect(() => {
-    getUser()
-  }, []);
-
-  const getUser = async () => {
-    const response = await UserService.getUser()
-    setUser(response.data)
-  }
+  const { user } = useUser();
 
   return (
     <div className='profile-page'>

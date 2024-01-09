@@ -1,5 +1,6 @@
 import '@assets/Global.css';
 import PrivateRoute from '@components/PrivateRoute.tsx';
+import { useUser } from '@components/UserUtils.ts';
 import Header from '@layouts/header/Header.tsx';
 import Sidebar from '@layouts/sidebar/Sidebar.tsx';
 import AuthPage from '@pages/auth/AuthPage.tsx';
@@ -7,7 +8,7 @@ import ExamsPage from '@pages/exams/ExamsPage.tsx';
 // import HomePage from '@pages/home/HomePage.tsx';
 import LessonsPage from '@pages/lessons/LessonsPage.tsx';
 import NotFoundPage from '@pages/not-found-page/NotFoundPage.tsx';
-// import EditProfilePage from '@pages/profile/components/edit-profile-card/EditProfilePage.tsx';
+import EditProfilePage from '@pages/profile/components/edit-profile-card/EditProfilePage.tsx';
 import Profile from '@pages/profile/Profile.tsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
@@ -17,6 +18,7 @@ import LessonComponent from './pages/lessons/components/lesson/LessonComponent.t
 function App() {
   const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDark, setIsDark] = useLocalStorage('isDark', preference);
+  const { user } = useUser();
 
   return (
     <BrowserRouter>
@@ -34,7 +36,7 @@ function App() {
                 <Route path={'/lesson/:id'} element={<LessonComponent />} />
                 <Route path={'/exams'} element={<ExamsPage />} />
                 <Route path={'/exam/:id'} element={<ExamComponent />} />
-                {/*<Route path={'/edit-profile'} element={<EditProfilePage />} />*/}
+                <Route path={'/edit-profile'} element={<EditProfilePage user={user} />} />
                 <Route path={'/profile'} element={<Profile />} />
               </Route>
               <Route path={'/'} element={<AuthPage />} />
