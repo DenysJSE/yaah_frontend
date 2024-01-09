@@ -30,6 +30,7 @@
 .sidebar-logo-title {
   margin-left: 4px;
   font-size: 40px;
+  cursor: default;
 }
 
 .sidebar-line {

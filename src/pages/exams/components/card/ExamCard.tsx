@@ -24,6 +24,7 @@ function ExamCard({ id, title, subjectTitle, testAward, isDone }: ExamInterface)
               additionalInfo={testAward}
             />
           </div>
+          {/* TODO: Make a dialog for results of exam if it is done */}
           {isDone && <p className='lesson-card-is-done'>Done</p>}
         </div>
       </div>

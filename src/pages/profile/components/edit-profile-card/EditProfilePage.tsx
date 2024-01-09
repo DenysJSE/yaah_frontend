@@ -1,24 +1,18 @@
-import { Context } from '../../../../App.tsx';
-import CloseButton from '@assets/Images/ContentImages/close.png';
+
 import HidePassword from '@assets/Images/ContentImages/hide.png';
 import ShowPassword from '@assets/Images/ContentImages/show.png';
 import Button from '@components/button.tsx';
 import { IUser } from '@pages/profile/Profile.tsx';
 import UserService from '../../../../services/UserService.ts';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
-import './EditProfileCard.css';
+import './EditProfilePage.css';
 
 interface IEditProfileCard {
   user: IUser;
-  handleCloseEditProfileCard: () => void;
 }
 
-function EditProfileCard({
-  user,
-  handleCloseEditProfileCard
-}: IEditProfileCard) {
-  const { store } = useContext(Context);
+function EditProfilePage({ user }: IEditProfileCard) {
   const [newNickname, setNewNickname] = useState(user.nickname);
   const [userPassword, setUserPassword] = useState('');
   const [newUserPassword, setNewUserPassword] = useState('');
@@ -53,7 +47,6 @@ function EditProfileCard({
       const userID = user.id;
       await UserService.updateUserNickname({ userID, newNickname });
       toast.success('The nickname was updated');
-      await store.getUser();
     } catch (e) {
       handleFormSubmissionError(e);
     }
@@ -80,12 +73,6 @@ function EditProfileCard({
             <h1 className='profile-page-edit-form-header-title'>
               Edit Profile
             </h1>
-            <img
-              src={CloseButton}
-              alt='closeButton'
-              className='profile-page-edit-form-header-close-button'
-              onClick={handleCloseEditProfileCard}
-            />
           </div>
           <div className='edit-profile-inputs'>
             <div className='edit-profile-input'>
@@ -162,4 +149,4 @@ function EditProfileCard({
   );
 }
 
-export default EditProfileCard;
+export default EditProfilePage;

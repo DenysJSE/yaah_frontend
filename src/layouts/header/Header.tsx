@@ -1,7 +1,5 @@
-import XpLogo from '@assets/Images/HeaderImages/expirience.png';
-import XpLogoDark from '@assets/Images/HeaderImages/expirience_dark.png';
-import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
-import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
+// import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
+// import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
 import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
 import BackButton from '@assets/Images/ContentImages/left.png'
 import ProfilePopUp from '@layouts/profile-popup-menu/ProfilePopUp.tsx';
@@ -14,30 +12,10 @@ interface HeaderInterface {
   setIsDark: (isDark: boolean) => void;
 }
 
-interface IUser {
-  id: number,
-  nickname: string,
-  email: string,
-  coins: number,
-  roles: {
-    id: number,
-    value: string,
-    description: string
-  }
-}
-
 function Header({ isDark, setIsDark }: HeaderInterface) {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState('');
   const [isProfileVisible, setIsProfileVisible] = useState(false);
-  const [user, setUser] = useState<IUser | null>(null);
-
-  useEffect(() => {
-    const storedUserString = localStorage.getItem('user');
-    const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
-
-    setUser(storedUser)
-  }, []);
 
   useEffect(() => {
     const routeToTitle: { [key: string]: string } = {
@@ -74,21 +52,13 @@ function Header({ isDark, setIsDark }: HeaderInterface) {
           )}
         </div>
         <div className='header-user-info'>
-          <div className='header-user-info-div xp-count'>
-            <img
-              src={isDark ? XpLogo : XpLogoDark}
-              alt='xpLogo'
-              className='header-xp-notification-image'
-            />
-            <span className='header-xp-amount'>{user?.coins}</span>
-          </div>
-          <div className='header-user-info-div notification'>
-            <img
-              src={isDark ? NotificationLogo : NotificationLogoDark}
-              alt='Notification'
-              className='header-xp-notification-image'
-            />
-          </div>
+          {/*<div className='header-user-info-div notification'>*/}
+          {/*  <img*/}
+          {/*    src={isDark ? NotificationLogo : NotificationLogoDark}*/}
+          {/*    alt='Notification'*/}
+          {/*    className='header-xp-notification-image'*/}
+          {/*  />*/}
+          {/*</div>*/}
           <div
             className='header-user-info-div user'
             onMouseEnter={handleProfileHover}
