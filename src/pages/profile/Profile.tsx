@@ -9,6 +9,7 @@ export interface IUser {
   nickname: string;
   email: string;
   coins: number;
+  created_at: string
   roles: {
     id: number;
     value: string;
@@ -19,12 +20,18 @@ export interface IUser {
 function Profile() {
   const { user } = useUser();
 
+  const formattedDate = new Date(user?.created_at).toLocaleDateString('pl-PL', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+
   return (
     <div className='profile-page'>
       <div className='profile-page-card'>
         <img src={UserIcon} alt='userIcon' className='profile-page-user-icon' />
         <h1 className='profile-page-user-nickname'>{user?.nickname}</h1>
-        <p className='profile-page-member-date'>Member since 2023</p>
+        <p className='profile-page-member-date'>Member since {formattedDate}</p>
         <Link to='/edit-profile'>
           <Button text={'Edit Profile'} />
         </Link>
