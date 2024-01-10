@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ExamService from '../../services/ExamService.ts';
-import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
-import { RootState } from '../../store/store.ts';
-import { IExam } from '../../types/types.ts';
+import { IExam } from 'types/types.ts';
+import ExamService from 'services/ExamService.ts';
+import { setSelectedSubject } from 'store/lessons/selectSubject.ts';
+import { RootState } from 'store/store.ts';
 import ExamCard from './components/card/ExamCard.tsx';
 import './Exams.css';
 
@@ -15,8 +15,8 @@ function ExamsPage() {
   const [examData, setExamData] = useState<IExam[] | null>(null);
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   async function getData() {
     try {
@@ -44,7 +44,9 @@ function ExamsPage() {
   const filteredExams =
     selectedSubject === 'All'
       ? examData
-      : examData ? examData.filter(exam => exam.exam.subject.title === selectedSubject) : null;
+      : examData
+      ? examData.filter(exam => exam.exam.subject.title === selectedSubject)
+      : null;
 
   return (
     <div className='exam-page-content'>
@@ -64,7 +66,7 @@ function ExamsPage() {
         </div>
       </div>
       <div className='exam-page-exam-cards'>
-        {filteredExams?.map((exam) => (
+        {filteredExams?.map(exam => (
           <ExamCard
             key={exam.id}
             id={exam.id}

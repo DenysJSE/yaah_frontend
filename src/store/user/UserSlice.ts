@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IUser } from '../../types/types.ts';
+import { IUser } from 'types/types.ts';
 
 interface IUserState {
   user: IUser;
@@ -17,10 +17,10 @@ const initialState: IUserState = {
     roles: {
       id: 0,
       value: '',
-      description: '',
-    },
+      description: ''
+    }
   },
-  isAuthenticated: false,
+  isAuthenticated: false
 };
 
 const userSlice = createSlice({
@@ -32,8 +32,8 @@ const userSlice = createSlice({
     },
     setUser(state, action: PayloadAction<IUser>) {
       state.user = action.payload;
-    },
-  },
+    }
+  }
 });
 
 export const { setIsAuthenticated, setUser } = userSlice.actions;

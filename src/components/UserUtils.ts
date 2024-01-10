@@ -1,6 +1,6 @@
-import { IUser } from '@pages/profile/Profile.tsx';
 import { useEffect, useState } from 'react';
-import UserService from '../services/UserService.ts';
+import { IUser } from 'types/types.ts';
+import UserService from 'services/UserService.ts';
 
 export class InitialUser {
   id = 0;

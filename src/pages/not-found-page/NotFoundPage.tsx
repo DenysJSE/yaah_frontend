@@ -1,5 +1,5 @@
-import Ghost from '@assets/Images/ContentImages/ghost.png';
-import Button from '@components/button.tsx';
+import Ghost from 'assets/Images/ContentImages/ghost.png';
+import Button from 'components/button.tsx';
 import './NotFoundPage.css';
 
 interface INotFoundPage {

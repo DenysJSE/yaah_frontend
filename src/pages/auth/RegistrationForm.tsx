@@ -1,5 +1,5 @@
 import './Auth.css';
-import { IRegistrationForm } from '../../types/types.ts';
+import { IRegistrationForm } from 'types/types.ts';
 
 function RegistrationForm({handleAuthMode, handleEmailChange, handlePasswordChange, handleNicknameChange, handleSubmit}: IRegistrationForm) {
   return (

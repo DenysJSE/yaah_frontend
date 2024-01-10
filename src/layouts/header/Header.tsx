@@ -1,12 +1,10 @@
-// import NotificationLogo from '@assets/Images/HeaderImages/notif.png';
-// import NotificationLogoDark from '@assets/Images/HeaderImages/notif_dark.png';
-import UserLogo from '@assets/Images/HeaderImages/userlogo.jpg';
-import BackButton from '@assets/Images/ContentImages/left.png'
-import ProfilePopUp from '@layouts/profile-popup-menu/ProfilePopUp.tsx';
+import BackButton from 'assets/Images/ContentImages/left.png';
+import UserLogo from 'assets/Images/HeaderImages/userlogo.jpg';
+import ProfilePopUp from 'layouts/profile-popup-menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { IHeader } from 'types/types.ts';
 import './Header.css';
-import { IHeader } from '../../types/types.ts';
 
 function Header({ isDark, setIsDark }: IHeader) {
   const location = useLocation();
@@ -18,9 +16,6 @@ function Header({ isDark, setIsDark }: IHeader) {
       '/home': 'Home',
       '/lessons': 'Lessons',
       '/exams': 'Exams',
-      '/achievements': 'Achievements',
-      '/missions': 'Missions',
-      '/leaderboard': 'LeaderBoard',
       '/profile': 'Profile'
     };
 
@@ -41,33 +36,39 @@ function Header({ isDark, setIsDark }: IHeader) {
         <div className='header-title'>
           {location.pathname.startsWith('/lesson/') ? (
             <div onClick={() => history.back()}>
-              <img src={BackButton} alt='backButton' className='header-lesson-back-button'/>
+              <img
+                src={BackButton}
+                alt='backButton'
+                className='header-lesson-back-button'
+              />
             </div>
           ) : (
             <h1 className='header-title-text'>{pageTitle}</h1>
           )}
         </div>
         <div className='header-user-info'>
-          {/*<div className='header-user-info-div notification'>*/}
-          {/*  <img*/}
-          {/*    src={isDark ? NotificationLogo : NotificationLogoDark}*/}
-          {/*    alt='Notification'*/}
-          {/*    className='header-xp-notification-image'*/}
-          {/*  />*/}
-          {/*</div>*/}
           <div
             className='header-user-info-div user'
             onMouseEnter={handleProfileHover}
             onMouseLeave={handleProfileLeave}
           >
-          <img src={UserLogo} alt='userLogo' className='header-user-logo' onClick={() => setIsProfileVisible(!isProfileVisible)} />
+            <img
+              src={UserLogo}
+              alt='userLogo'
+              className='header-user-logo'
+              onClick={() => setIsProfileVisible(!isProfileVisible)}
+            />
           </div>
           {isProfileVisible && (
             <div
               onMouseEnter={handleProfileHover}
               onMouseLeave={handleProfileLeave}
             >
-              <ProfilePopUp isDark={isDark} setIsDark={setIsDark} setIsProfileVisible={setIsProfileVisible} />
+              <ProfilePopUp
+                isDark={isDark}
+                setIsDark={setIsDark}
+                setIsProfileVisible={setIsProfileVisible}
+              />
             </div>
           )}
         </div>

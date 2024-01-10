@@ -1,6 +1,6 @@
 import './Auth.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { ILoginForm } from '../../types/types.ts';
+import { ILoginForm } from 'types/types.ts';
 
 function LoginForm({handleAuthMode, handleEmailChange, handlePasswordChange, handleSubmit}: ILoginForm) {
 

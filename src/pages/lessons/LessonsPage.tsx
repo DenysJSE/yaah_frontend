@@ -1,11 +1,11 @@
-import LessonCard from '@pages/lessons/components/card/LessonCard.tsx';
+import LessonCard from 'pages/lessons/components/card/LessonCard.tsx';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import LessonService from '../../services/LessonService.ts';
+import { ILessons } from 'types/types.ts';
+import LessonService from 'services/LessonService.ts';
+import { setSelectedSubject } from 'store/lessons/selectSubject.ts';
+import { RootState } from 'store/store.ts';
 import './LessonsPage.css';
-import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
-import { RootState } from '../../store/store.ts';
-import { ILessons } from '../../types/types.ts';
 
 function LessonsPage() {
   const selectedSubject = useSelector(
@@ -15,8 +15,8 @@ function LessonsPage() {
   const [lessonsData, setLessonsData] = useState<ILessons[] | null>(null);
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   async function getData() {
     try {
@@ -44,7 +44,11 @@ function LessonsPage() {
   const filteredLessons =
     selectedSubject === 'All'
       ? lessonsData
-      : lessonsData ? lessonsData.filter(lesson => lesson.lesson.subject.title === selectedSubject) : null;
+      : lessonsData
+      ? lessonsData.filter(
+          lesson => lesson.lesson.subject.title === selectedSubject
+        )
+      : null;
 
   return (
     <div className='lessons-page-content'>

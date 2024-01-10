@@ -1,4 +1,4 @@
-import CourseIcon from '@assets/Images/ContentImages/CourseIcon.png';
+import CourseIcon from 'assets/Images/ContentImages/CourseIcon.png';
 import './ContinueLearnCard.css';
 
 function ContinueLearnCard() {

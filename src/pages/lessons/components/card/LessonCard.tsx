@@ -1,10 +1,16 @@
-import LessonIcon from '@assets/Images/ContentImages/Icon.png';
-import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
+import LessonIcon from 'assets/Images/ContentImages/Icon.png';
+import CardAdditionalInfo from 'components/CardAdditionalInfo.tsx';
 import { Link } from 'react-router-dom';
+import { ILessonCard } from 'types/types.ts';
 import './LessonCard.css';
-import { ILessonCard } from '../../../../types/types.ts';
 
-function LessonCard({ id, title, subjectTitle, examsAmount, isDone}: ILessonCard) {
+function LessonCard({
+  id,
+  title,
+  subjectTitle,
+  examsAmount,
+  isDone
+}: ILessonCard) {
   return (
     <Link to={`/lesson/${id}`} className='link'>
       <div className='lesson-card'>

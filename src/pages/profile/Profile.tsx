@@ -1,8 +1,8 @@
-import UserIcon from '@assets/Images/HeaderImages/userlogo.jpg';
-import Button from '@components/button.tsx';
-import './Profile.css';
-import { useUser } from '@components/UserUtils.ts';
+import UserIcon from 'assets/Images/HeaderImages/userlogo.jpg';
+import Button from 'components/button.tsx';
+import { useUser } from 'components/UserUtils.ts';
 import { Link } from 'react-router-dom';
+import './Profile.css';
 
 function Profile() {
   const { user } = useUser();
@@ -10,7 +10,7 @@ function Profile() {
   const formattedDate = new Date(user?.created_at).toLocaleDateString('pl-PL', {
     day: '2-digit',
     month: '2-digit',
-    year: 'numeric',
+    year: 'numeric'
   });
 
   return (

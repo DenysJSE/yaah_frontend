@@ -1,16 +1,16 @@
-import Exams from '@assets/Images/SideBarImages/exam.png';
-import ExamsActive from '@assets/Images/SideBarImages/exam_active.png';
-import ExamsDark from '@assets/Images/SideBarImages/exam_dark.png';
-// import Home from '@assets/Images/SideBarImages/home.png';
-// import HomeActive from '@assets/Images/SideBarImages/home_active.png';
-// import HomeDark from '@assets/Images/SideBarImages/home_dark.png';
-import Lessons from '@assets/Images/SideBarImages/lessons.png';
-import LessonsActive from '@assets/Images/SideBarImages/lessons_active.png';
-import LessonsDark from '@assets/Images/SideBarImages/lessons_dark.png';
-import YaahLogo from '@assets/Images/SideBarImages/Logo.png';
+import Exams from 'assets/Images/SideBarImages/exam.png';
+import ExamsActive from 'assets/Images/SideBarImages/exam_active.png';
+import ExamsDark from 'assets/Images/SideBarImages/exam_dark.png';
+// import Home from 'assets/Images/SideBarImages/home.png';
+// import HomeActive from 'assets/Images/SideBarImages/home_active.png';
+// import HomeDark from 'assets/Images/SideBarImages/home_dark.png';
+import Lessons from 'assets/Images/SideBarImages/lessons.png';
+import LessonsActive from 'assets/Images/SideBarImages/lessons_active.png';
+import LessonsDark from 'assets/Images/SideBarImages/lessons_dark.png';
+import YaahLogo from 'assets/Images/SideBarImages/Logo.png';
 import { NavLink } from 'react-router-dom';
+import { ISideBar } from 'types/types.ts';
 import './Sidebar.css';
-import { ISideBar } from '../../types/types.ts';
 
 function Sidebar({ isDark }: ISideBar) {
   return (

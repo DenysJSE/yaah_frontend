@@ -1,24 +1,28 @@
-import UserLogo from '@assets/Images/ContentImages/user.png';
-import DarkMode from '@assets/Images/SideBarImages/dark_mode.png';
-import LightMode from '@assets/Images/SideBarImages/light_mode.png';
-import Logout from '@assets/Images/SideBarImages/logout.png';
+import UserLogo from 'assets/Images/ContentImages/user.png';
+import DarkMode from 'assets/Images/SideBarImages/dark_mode.png';
+import LightMode from 'assets/Images/SideBarImages/light_mode.png';
+import Logout from 'assets/Images/SideBarImages/logout.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IProfilePopUp } from 'types/types.ts';
 import './ProfilePopUp.css';
-import { IProfilePopUp } from '../../types/types.ts';
 
-function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: IProfilePopUp) {
+function ProfilePopUp({
+  isDark,
+  setIsDark,
+  setIsProfileVisible
+}: IProfilePopUp) {
   const [isLogged, setIsLogged] = useState(!!localStorage.getItem('token'));
-  
+
   const handlePopUpClose = () => {
-    setIsProfileVisible(false)
-  }
+    setIsProfileVisible(false);
+  };
 
   const handleLogout = () => {
-    localStorage.removeItem('token')
-    setIsLogged(false)
-    handlePopUpClose()
-  }
+    localStorage.removeItem('token');
+    setIsLogged(false);
+    handlePopUpClose();
+  };
 
   return (
     <div className='profile-pop-up'>
@@ -43,12 +47,11 @@ function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: IProfilePopUp)
         <p className='profile-pop-up-title pput-dark-mode'>Dark Mode</p>
       </div>
       <Link to={'/'} className='link'>
-        <div
-          className='profile-pop-up-link ppu-logout'
-          onClick={handleLogout}
-        >
+        <div className='profile-pop-up-link ppu-logout' onClick={handleLogout}>
           <img src={Logout} alt='logout' className='profile-pop-up-image' />
-          <p className='profile-pop-up-title pput-logout'>{isLogged ? 'Logout' : 'Login'}</p>
+          <p className='profile-pop-up-title pput-logout'>
+            {isLogged ? 'Logout' : 'Login'}
+          </p>
         </div>
       </Link>
     </div>

@@ -1,4 +1,4 @@
-import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
+import CardAdditionalInfo from 'components/CardAdditionalInfo.tsx';
 import './RecommendCard.css';
 
 interface RecommendationCardInterface {

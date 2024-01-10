@@ -1,12 +1,12 @@
-import LoginForm from '@pages/auth/LoginForm.tsx';
-import RegistrationForm from '@pages/auth/RegistrationForm.tsx';
+import LoginForm from 'pages/auth/LoginForm.tsx';
+import RegistrationForm from 'pages/auth/RegistrationForm.tsx';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Auth.css';
-import { loginUser, registerUser } from '../../store/user/UserActions.ts';
-import { setIsAuthenticated, setUser } from '../../store/user/UserSlice.ts';
+import { loginUser, registerUser } from 'store/user/UserActions.ts';
+import { setIsAuthenticated, setUser } from 'store/user/UserSlice.ts';
 
 function AuthPage() {
   const dispatch = useDispatch();

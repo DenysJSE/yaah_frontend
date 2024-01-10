@@ -1,5 +1,5 @@
-import HidePassword from '@assets/Images/ContentImages/hide.png';
-import ShowPassword from '@assets/Images/ContentImages/show.png';
+import HidePassword from 'assets/Images/ContentImages/hide.png';
+import ShowPassword from 'assets/Images/ContentImages/show.png';
 import * as React from 'react';
 import './EditProfilePage.css';
 
@@ -30,7 +30,6 @@ function EditProfileInput({
   isShowPassword,
   handleShowPassword
 }: IEditProfileInput) {
-  console.log(isShowPassword);
   return (
     <div className={`edit-profile-input ${inputBlockAdditionalClassName}`}>
       <label htmlFor={labelHtmlFor} className='edit-profile-input-label'>

@@ -1,10 +1,16 @@
-import ExamLogo from '@assets/Images/ContentImages/Icon.png';
-import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
+import ExamLogo from 'assets/Images/ContentImages/Icon.png';
+import CardAdditionalInfo from 'components/CardAdditionalInfo.tsx';
 import { Link } from 'react-router-dom';
+import { ExamInterface } from 'types/types.ts';
 import './ExamCard.css';
-import { ExamInterface } from '../../../../types/types.ts';
 
-function ExamCard({ id, title, subjectTitle, testAward, isDone }: ExamInterface) {
+function ExamCard({
+  id,
+  title,
+  subjectTitle,
+  testAward,
+  isDone
+}: ExamInterface) {
   return (
     <Link to={`/exam/${id}`} className='link'>
       <div className='exam-card'>

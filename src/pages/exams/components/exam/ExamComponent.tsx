@@ -1,11 +1,11 @@
-import Close from '@assets/Images/ContentImages/close.png';
-import Button from '@components/button.tsx';
-import NotFoundPage from '@pages/not-found-page/NotFoundPage.tsx';
+import Close from 'assets/Images/ContentImages/close.png';
+import Button from 'components/button.tsx';
+import NotFoundPage from 'pages/not-found-page/NotFoundPage.tsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { IExamExam, IExamOption } from 'types/types.ts';
+import ExamService from 'services/ExamService.ts';
 import './ExamComponent.css';
-import ExamService from '../../../../services/ExamService.ts';
-import { IExamExam, IExamOption } from '../../../../types/types.ts';
 
 function ExamComponent() {
   const { id } = useParams();
@@ -13,7 +13,9 @@ function ExamComponent() {
   const [showPassedMessage, setShowPassedMessage] = useState(false);
   const [progress, setProgress] = useState(0);
   const [passedQuestions, setPassedQuestions] = useState(0);
-  const [selectedOption, setSelectedOption] = useState<IExamOption | null>(null);
+  const [selectedOption, setSelectedOption] = useState<IExamOption | null>(
+    null
+  );
   const [isContinueEnabled, setContinueEnabled] = useState(false);
   const [exam, setExam] = useState<IExamExam | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -77,13 +79,13 @@ function ExamComponent() {
   const currentQuestion = exam.questions[currentQuestionIndex];
 
   const handleCloseExam = () => {
-    history.back()
-  }
+    history.back();
+  };
 
   const handleMarkAdDone = async () => {
-    await ExamService.updateIsDoneExamStatus(parseInt(id))
-    history.back()
-  }
+    await ExamService.updateIsDoneExamStatus(parseInt(id));
+    history.back();
+  };
 
   return (
     <div className='exam-component'>
@@ -103,23 +105,30 @@ function ExamComponent() {
       </div>
       <div className='exam-main'>
         {showPassedMessage ? (
-          <h1 className='exam-component-main-question'>You passed the exam!<br/>You have {correctAnswers} correct answers</h1>
+          <h1 className='exam-component-main-question'>
+            You passed the exam!
+            <br />
+            You have {correctAnswers} correct answers
+          </h1>
         ) : (
           <>
             <h1 className='exam-component-main-question'>
               {currentQuestion.question}
             </h1>
-            {currentQuestion.option && currentQuestion.option.map((option) => (
-              <div
-                className={`exam-component-main-option ${selectedOption === option ? 'active' : ''}`}
-                key={option.id}
-                onClick={() => handleOptionClick(option)}
-              >
-                <p className='exam-component-main-option-text'>
-                  {option.text}
-                </p>
-              </div>
-            ))}
+            {currentQuestion.option &&
+              currentQuestion.option.map(option => (
+                <div
+                  className={`exam-component-main-option ${
+                    selectedOption === option ? 'active' : ''
+                  }`}
+                  key={option.id}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  <p className='exam-component-main-option-text'>
+                    {option.text}
+                  </p>
+                </div>
+              ))}
           </>
         )}
       </div>
