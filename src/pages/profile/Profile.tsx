@@ -4,19 +4,6 @@ import './Profile.css';
 import { useUser } from '@components/UserUtils.ts';
 import { Link } from 'react-router-dom';
 
-export interface IUser {
-  id: number;
-  nickname: string;
-  email: string;
-  coins: number;
-  created_at: string
-  roles: {
-    id: number;
-    value: string;
-    description: string;
-  };
-}
-
 function Profile() {
   const { user } = useUser();
 

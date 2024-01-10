@@ -6,13 +6,9 @@ import ProfilePopUp from '@layouts/profile-popup-menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Header.css';
+import { IHeader } from '../../types/types.ts';
 
-interface HeaderInterface {
-  isDark: boolean;
-  setIsDark: (isDark: boolean) => void;
-}
-
-function Header({ isDark, setIsDark }: HeaderInterface) {
+function Header({ isDark, setIsDark }: IHeader) {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState('');
   const [isProfileVisible, setIsProfileVisible] = useState(false);

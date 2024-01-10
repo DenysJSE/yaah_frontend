@@ -5,26 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ExamComponent.css';
 import ExamService from '../../../../services/ExamService.ts';
-
-interface Option {
-  id: number;
-  text: string;
-  isCorrect: boolean
-}
-
-interface Question {
-  id: number;
-  question: string;
-  option: Option[];
-}
-
-interface Exam {
-  id: number;
-  isDone: boolean;
-  award: string;
-  description: string;
-  questions: Question[];
-}
+import { IExamExam, IExamOption } from '../../../../types/types.ts';
 
 function ExamComponent() {
   const { id } = useParams();
@@ -32,9 +13,9 @@ function ExamComponent() {
   const [showPassedMessage, setShowPassedMessage] = useState(false);
   const [progress, setProgress] = useState(0);
   const [passedQuestions, setPassedQuestions] = useState(0);
-  const [selectedOption, setSelectedOption] = useState<Option | null>(null);
+  const [selectedOption, setSelectedOption] = useState<IExamOption | null>(null);
   const [isContinueEnabled, setContinueEnabled] = useState(false);
-  const [exam, setExam] = useState<Exam | null>(null);
+  const [exam, setExam] = useState<IExamExam | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -69,7 +50,7 @@ function ExamComponent() {
     return <NotFoundPage extraMessage={'The exam with such id not found!'} />;
   }
 
-  const handleOptionClick = (option: Option) => {
+  const handleOptionClick = (option: IExamOption) => {
     setSelectedOption(option);
     setContinueEnabled(true);
     if (option.isCorrect) {

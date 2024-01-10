@@ -1,11 +1,11 @@
 import CloseButton from '@assets/Images/ContentImages/close.png';
 import Button from '@components/button.tsx';
 import EditProfileInput from '@pages/profile/components/edit-profile-card/EditProfileInput.tsx';
-import { IUser } from '@pages/profile/Profile.tsx';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import UserService from '../../../../services/UserService.ts';
 import './EditProfilePage.css';
+import { IUser } from '../../../../types/types.ts';
 
 interface IEditProfileCard {
   user: IUser;

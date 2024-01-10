@@ -5,26 +5,7 @@ import LessonService from '../../services/LessonService.ts';
 import './LessonsPage.css';
 import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
 import { RootState } from '../../store/store.ts';
-// import lessonsData from '@data/LessonsData.json';
-
-interface ILessons {
-  id: number,
-  isDone: boolean,
-  lesson: {
-    id: number
-    title: string
-    award: string
-    lessonData: string
-    subject: {
-      id: number
-      title: string
-      description: string
-      examNumber: number
-      lessonNumber: number
-      courseDuration: number
-    }
-  }
-}
+import { ILessons } from '../../types/types.ts';
 
 function LessonsPage() {
   const selectedSubject = useSelector(

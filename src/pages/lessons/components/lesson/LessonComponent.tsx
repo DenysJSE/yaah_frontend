@@ -4,17 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './LessonComponent.css';
 import LessonService from '../../../../services/LessonService.ts';
-
-interface ILesson {
-  id: number
-  isDone: boolean
-  lesson: {
-    id: number
-    title: string
-    award: number
-    lessonData: string
-  }
-}
+import { ILesson } from '../../../../types/types.ts';
 
 function LessonComponent() {
   const { id } = useParams();

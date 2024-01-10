@@ -3,36 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import ExamService from '../../services/ExamService.ts';
 import { setSelectedSubject } from '../../store/lessons/selectSubject.ts';
 import { RootState } from '../../store/store.ts';
+import { IExam } from '../../types/types.ts';
 import ExamCard from './components/card/ExamCard.tsx';
 import './Exams.css';
-
-export interface IExam {
-  id: number
-  isDone: boolean
-  exam: {
-    id: number
-    award: string
-    title: string
-    description: string
-    questions: {
-      id: number
-      question: string
-      option: {
-        id: number
-        isCorrect: boolean
-        text: string
-      }
-    }
-    subject: {
-      id: number
-      title: string
-      description: string
-      courseDuration: number
-      examsNumber: number
-      lessonNumber: number
-    }
-  }
-}
 
 function ExamsPage() {
   const selectedSubject = useSelector(

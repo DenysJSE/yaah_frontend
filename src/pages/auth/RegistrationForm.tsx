@@ -1,12 +1,5 @@
 import './Auth.css';
-
-interface IRegistrationForm {
-  handleAuthMode: () => void;
-  handleEmailChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handlePasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleNicknameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
-}
+import { IRegistrationForm } from '../../types/types.ts';
 
 function RegistrationForm({handleAuthMode, handleEmailChange, handlePasswordChange, handleNicknameChange, handleSubmit}: IRegistrationForm) {
   return (

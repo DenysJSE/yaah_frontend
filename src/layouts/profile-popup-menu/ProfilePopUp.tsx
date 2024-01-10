@@ -5,14 +5,9 @@ import Logout from '@assets/Images/SideBarImages/logout.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProfilePopUp.css';
+import { IProfilePopUp } from '../../types/types.ts';
 
-interface ProfilePopUp {
-  isDark: boolean;
-  setIsDark: (isDark: boolean) => void;
-  setIsProfileVisible: (isProfileVisible: boolean) => void;
-}
-
-function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: ProfilePopUp) {
+function ProfilePopUp({ isDark, setIsDark, setIsProfileVisible }: IProfilePopUp) {
   const [isLogged, setIsLogged] = useState(!!localStorage.getItem('token'));
   
   const handlePopUpClose = () => {

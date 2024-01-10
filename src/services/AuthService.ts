@@ -5,7 +5,6 @@ interface IUserLogin {
   password: string
 }
 
-//TODO: Brought out types to file
 interface IUserRegistration {
   email: string,
   password: string

@@ -8,17 +8,11 @@ import Lessons from '@assets/Images/SideBarImages/lessons.png';
 import LessonsActive from '@assets/Images/SideBarImages/lessons_active.png';
 import LessonsDark from '@assets/Images/SideBarImages/lessons_dark.png';
 import YaahLogo from '@assets/Images/SideBarImages/Logo.png';
-// import Missions from '@assets/Images/SideBarImages/mission.png';
-// import MissionsActive from '@assets/Images/SideBarImages/mission_active.png';
-// import MissionsDark from '@assets/Images/SideBarImages/mission_dark.png';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
+import { ISideBar } from '../../types/types.ts';
 
-interface SideBarInterface {
-  isDark: boolean;
-}
-
-function Sidebar({ isDark }: SideBarInterface) {
+function Sidebar({ isDark }: ISideBar) {
   return (
     <div className='sidebar'>
       <div className='sidebar-top'>
@@ -75,40 +69,11 @@ function Sidebar({ isDark }: SideBarInterface) {
                     </div>
                   )}
                 </NavLink>
-                {/*<NavLink to={'/missions'} className='link'>*/}
-                {/*  {({ isActive }) => (*/}
-                {/*    <div className={`sidebar-link ${isActive ? 'active' : ''}`}>*/}
-                {/*      <img*/}
-                {/*        src={*/}
-                {/*          isActive*/}
-                {/*            ? MissionsActive*/}
-                {/*            : isDark*/}
-                {/*            ? Missions*/}
-                {/*            : MissionsDark*/}
-                {/*        }*/}
-                {/*        alt='missions'*/}
-                {/*        className='sidebar-menu-image'*/}
-                {/*      />*/}
-                {/*      <h3 className='sidebar-link-title'>Missions</h3>*/}
-                {/*    </div>*/}
-                {/*  )}*/}
-                {/*</NavLink>*/}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/*<div className='sidebar-bottom-menu'>*/}
-
-      {/*  <hr className='sidebar-line sidebar-line-bottom' />*/}
-      {/*  <div className='sidebar-link sidebar-bottom-link logout'>*/}
-      {/*    <img src={isDark ? Logout : LogoutDark}*/}
-      {/*         alt='logout'*/}
-      {/*         className='sidebar-menu-image'*/}
-      {/*    />*/}
-      {/*    <h3 className='sidebar-link-title'>Logout</h3>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
     </div>
   );
 }

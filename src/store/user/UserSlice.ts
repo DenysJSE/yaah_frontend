@@ -1,17 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface IUser {
-  id: number
-  nickname: string
-  email: string
-  password: string
-  coins: number
-  roles: {
-    id: number
-    value: string
-    description: string
-  }
-}
+import { IUser } from '../../types/types.ts';
 
 interface IUserState {
   user: IUser;
@@ -24,6 +12,7 @@ const initialState: IUserState = {
     nickname: '',
     email: '',
     password: '',
+    created_at: '',
     coins: 0,
     roles: {
       id: 0,

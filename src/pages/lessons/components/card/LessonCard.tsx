@@ -2,16 +2,9 @@ import LessonIcon from '@assets/Images/ContentImages/Icon.png';
 import CardAdditionalInfo from '@components/CardAdditionalInfo.tsx';
 import { Link } from 'react-router-dom';
 import './LessonCard.css';
+import { ILessonCard } from '../../../../types/types.ts';
 
-interface LessonInterface {
-  id: number;
-  title: string;
-  subjectTitle: string;
-  examsAmount: string;
-  isDone: boolean
-}
-
-function LessonCard({ id, title, subjectTitle, examsAmount, isDone}: LessonInterface) {
+function LessonCard({ id, title, subjectTitle, examsAmount, isDone}: ILessonCard) {
   return (
     <Link to={`/lesson/${id}`} className='link'>
       <div className='lesson-card'>
