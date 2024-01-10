@@ -7,6 +7,7 @@ export class InitialUser {
   nickname = '';
   email = '';
   coins = 0;
+  created_at = ''
   roles = {
     id: 0,
     value: '',
