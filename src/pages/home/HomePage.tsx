@@ -24,7 +24,6 @@ function HomePage() {
                 title={rec.title}
                 description={rec.description}
                 level={rec.level}
-                courseDuration={rec.courseDuration}
               />
             ))}
           </div>
