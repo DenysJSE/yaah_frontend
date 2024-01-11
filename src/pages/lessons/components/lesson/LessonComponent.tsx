@@ -5,11 +5,13 @@ import { useParams } from 'react-router-dom';
 import { ILesson } from 'types/types.ts';
 import LessonService from '../../../../services/LessonService.ts';
 import './LessonComponent.css';
+import { quantum } from 'ldrs'
 
 function LessonComponent() {
   const { id } = useParams();
   const [lesson, setLesson] = useState<ILesson | null>(null);
   const [loading, setLoading] = useState(true);
+  quantum.register()
 
   useEffect(() => {
     const fetchLessonById = async () => {
@@ -25,7 +27,7 @@ function LessonComponent() {
       }
     };
     if (id) {
-      fetchLessonById();
+      setTimeout(() => fetchLessonById(), 500)
     }
   }, [id]);
 
@@ -34,7 +36,13 @@ function LessonComponent() {
   }
 
   if (loading) {
-    return <div className='lesson-component-loading'>Loading...</div>;
+    return <div className='lesson-component-loading'>
+      <l-quantum
+        size="55"
+        speed="2"
+        color='#B9C7FC'
+      />
+    </div>;
   }
 
   if (!lesson) {

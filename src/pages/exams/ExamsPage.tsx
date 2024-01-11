@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { IExam } from 'types/types.ts';
+import SubjectService from 'services/SubjectService.ts';
+import { IExam, ISubject } from 'types/types.ts';
 import ExamService from 'services/ExamService.ts';
 import { setSelectedSubject } from 'store/lessons/selectSubject.ts';
 import { RootState } from 'store/store.ts';
@@ -13,9 +14,11 @@ function ExamsPage() {
   );
   const dispatch = useDispatch();
   const [examData, setExamData] = useState<IExam[] | null>(null);
+  const [subjectTitle, setSubjectTitle] = useState<ISubject[]>();
 
   useEffect(() => {
     getData();
+    getSubjectTitles()
   }, []);
 
   async function getData() {
@@ -27,15 +30,16 @@ function ExamsPage() {
     }
   }
 
-  const subjects = [
-    'All',
-    'English Language',
-    'History',
-    'Math',
-    'Science',
-    'Geography',
-    'Literature'
-  ];
+  async function getSubjectTitles() {
+    try {
+      const response = await SubjectService.getSubjectsTitle()
+      setSubjectTitle(response.data)
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const subjectOptions = ['All', ...subjectTitle?.map(subject => subject.title) || []];
 
   const handleSubjectChange = (subject: string) => {
     dispatch(setSelectedSubject(subject));
@@ -52,7 +56,7 @@ function ExamsPage() {
     <div className='exam-page-content'>
       <div className='lessons-page-subject-slider'>
         <div className='exam-page-subject-titles'>
-          {subjects.map(subject => (
+          {subjectOptions.map(subject => (
             <h3
               key={subject}
               className={`exam-page-subject-title ${
@@ -72,7 +76,6 @@ function ExamsPage() {
             id={exam.id}
             title={exam.exam.title}
             subjectTitle={exam.exam.subject.title}
-            testAward={exam.exam.award}
             isDone={exam.isDone}
           />
         ))}

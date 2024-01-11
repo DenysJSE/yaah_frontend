@@ -1,16 +1,15 @@
 import ExamLogo from 'assets/Images/ContentImages/Icon.png';
 import CardAdditionalInfo from 'components/CardAdditionalInfo.tsx';
 import { Link } from 'react-router-dom';
-import { ExamInterface } from 'types/types.ts';
+import { IExamCard } from 'types/types.ts';
 import './ExamCard.css';
 
 function ExamCard({
   id,
   title,
   subjectTitle,
-  testAward,
   isDone
-}: ExamInterface) {
+}: IExamCard) {
   return (
     <Link to={`/exam/${id}`} className='link'>
       <div className='exam-card'>
@@ -18,10 +17,7 @@ function ExamCard({
           <img src={ExamLogo} alt='examLogo' className='exam-card-logo' />
           <div className='exam-card-title-description'>
             <h2 className='exam-card-title'>{title}</h2>
-            <CardAdditionalInfo
-              description={subjectTitle}
-              additionalInfo={testAward}
-            />
+            <CardAdditionalInfo description={subjectTitle} />
           </div>
           {/* TODO: Make a dialog for results of exam if it is done */}
           {isDone && <p className='lesson-card-is-done'>Done</p>}

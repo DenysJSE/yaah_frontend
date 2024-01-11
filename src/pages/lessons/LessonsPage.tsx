@@ -1,7 +1,8 @@
 import LessonCard from 'pages/lessons/components/card/LessonCard.tsx';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ILessons } from 'types/types.ts';
+import SubjectService from 'services/SubjectService.ts';
+import { ILessons, ISubject } from 'types/types.ts';
 import LessonService from 'services/LessonService.ts';
 import { setSelectedSubject } from 'store/lessons/selectSubject.ts';
 import { RootState } from 'store/store.ts';
@@ -13,9 +14,11 @@ function LessonsPage() {
   );
   const dispatch = useDispatch();
   const [lessonsData, setLessonsData] = useState<ILessons[] | null>(null);
+  const [subjectTitle, setSubjectTitle] = useState<ISubject[]>();
 
   useEffect(() => {
     getData();
+    getSubjectTitles()
   }, []);
 
   async function getData() {
@@ -27,15 +30,16 @@ function LessonsPage() {
     }
   }
 
-  const subjects = [
-    'All',
-    'English Language',
-    'History',
-    'Math',
-    'Science',
-    'Geography',
-    'Literature'
-  ];
+  async function getSubjectTitles() {
+    try {
+      const response = await SubjectService.getSubjectsTitle()
+      setSubjectTitle(response.data)
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const subjectOptions = ['All', ...subjectTitle?.map(subject => subject.title) || []];
 
   const handleSubjectChange = (subject: string) => {
     dispatch(setSelectedSubject(subject));
@@ -54,7 +58,7 @@ function LessonsPage() {
     <div className='lessons-page-content'>
       <div className='lessons-page-subject-slider'>
         <div className='lessons-page-subject-titles'>
-          {subjects.map(subject => (
+          {subjectOptions.map(subject => (
             <h3
               key={subject}
               className={`lessons-page-subject-title ${
@@ -74,7 +78,6 @@ function LessonsPage() {
             id={lesson.id}
             title={lesson.lesson.title}
             subjectTitle={lesson.lesson.subject.title}
-            examsAmount={lesson.lesson.award}
             isDone={lesson.isDone}
           />
         ))}

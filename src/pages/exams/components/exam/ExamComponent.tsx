@@ -1,11 +1,13 @@
 import Close from 'assets/Images/ContentImages/close.png';
 import Button from 'components/button.tsx';
+import ModalWindow from 'components/ModalWindow.tsx';
 import NotFoundPage from 'pages/not-found-page/NotFoundPage.tsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { IExamExam, IExamOption } from 'types/types.ts';
 import ExamService from 'services/ExamService.ts';
+import { IExamExam, IExamOption } from 'types/types.ts';
 import './ExamComponent.css';
+import { quantum } from 'ldrs'
 
 function ExamComponent() {
   const { id } = useParams();
@@ -20,6 +22,8 @@ function ExamComponent() {
   const [exam, setExam] = useState<IExamExam | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [isModalWindowShown, setIsModalWindowShown] = useState(false);
+  quantum.register()
 
   useEffect(() => {
     const fetchExamById = async () => {
@@ -34,18 +38,34 @@ function ExamComponent() {
         setLoading(false);
       }
     };
-
     if (id) {
-      fetchExamById();
+      setTimeout(() => fetchExamById(), 3000)
     }
   }, [id]);
+
+  useEffect(() => {
+    const unloadCallback = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+      return "";
+    };
+
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+  }, []);
 
   if (!id) {
     return <NotFoundPage />;
   }
 
   if (loading) {
-    return <div className='lesson-component-loading'>Loading...</div>;
+    return <div className='exam-component-loading'>
+      <l-quantum
+        size="55"
+        speed="2"
+        color='#B9C7FC'
+      />
+    </div>;
   }
 
   if (!exam) {
@@ -53,6 +73,9 @@ function ExamComponent() {
   }
 
   const handleOptionClick = (option: IExamOption) => {
+    if (selectedOption && selectedOption.isCorrect) {
+      setCorrectAnswers(correctAnswers - 1);
+    }
     setSelectedOption(option);
     setContinueEnabled(true);
     if (option.isCorrect) {
@@ -78,12 +101,22 @@ function ExamComponent() {
 
   const currentQuestion = exam.questions[currentQuestionIndex];
 
+  const handleShowModalWindow = () => {
+    setIsModalWindowShown(true)
+  }
+
+  const handleHideModalWindow = () => {
+    setIsModalWindowShown(false)
+  }
+
   const handleCloseExam = () => {
+    setIsModalWindowShown(false)
     history.back();
   };
 
   const handleMarkAdDone = async () => {
     await ExamService.updateIsDoneExamStatus(parseInt(id));
+    await ExamService.updateCorrectAnswerAmount(parseInt(id), correctAnswers)
     history.back();
   };
 
@@ -95,8 +128,18 @@ function ExamComponent() {
             src={Close}
             alt='closeIcon'
             className='exam-component-close-icon'
-            onClick={handleCloseExam}
+            onClick={handleShowModalWindow}
           />
+          {isModalWindowShown &&
+            <ModalWindow
+              handleCansel={handleHideModalWindow}
+              handleDoAction={handleCloseExam}
+              cancelText={'Keep Learning'}
+              doActionText={'Exit Exam'}
+              modalWindowTitle={'Hold it right there!'}
+              modalWindowText={'You are doing wonderful! If you quit now, you will lose all your progress.'}
+            />
+          }
           <div className='progress-bar'>
             <div className='progress' style={{ width: `${progress}%` }}></div>
           </div>
@@ -118,10 +161,10 @@ function ExamComponent() {
             {currentQuestion.option &&
               currentQuestion.option.map(option => (
                 <div
+                  key={option.id}
                   className={`exam-component-main-option ${
                     selectedOption === option ? 'active' : ''
                   }`}
-                  key={option.id}
                   onClick={() => handleOptionClick(option)}
                 >
                   <p className='exam-component-main-option-text'>

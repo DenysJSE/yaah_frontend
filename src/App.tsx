@@ -11,23 +11,20 @@ import NotFoundPage from 'pages/not-found-page/NotFoundPage.tsx';
 import EditProfilePage from 'pages/profile/components/edit-profile-card/EditProfilePage.tsx';
 import Profile from 'pages/profile/Profile.tsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import useLocalStorage from 'use-local-storage';
 import ExamComponent from './pages/exams/components/exam/ExamComponent.tsx';
 import LessonComponent from './pages/lessons/components/lesson/LessonComponent.tsx';
 
 function App() {
-  const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const [isDark, setIsDark] = useLocalStorage('isDark', preference);
   const { user } = useUser();
 
   return (
     <BrowserRouter>
-      <div className='App' data-theme={isDark ? 'dark' : ''}>
+      <div className='App'>
         <div className='app-sidebar'>
-          <Sidebar isDark={isDark} />
+          <Sidebar />
         </div>
         <div className='app-content'>
-          <Header isDark={isDark} setIsDark={setIsDark} />
+          <Header />
           <div className='app-page'>
             <Routes>
               <Route element={<PrivateRoute />}>
@@ -36,10 +33,7 @@ function App() {
                 <Route path={'/lesson/:id'} element={<LessonComponent />} />
                 <Route path={'/exams'} element={<ExamsPage />} />
                 <Route path={'/exam/:id'} element={<ExamComponent />} />
-                <Route
-                  path={'/edit-profile'}
-                  element={<EditProfilePage user={user} />}
-                />
+                <Route path={'/edit-profile'} element={<EditProfilePage user={user} />} />
                 <Route path={'/profile'} element={<Profile />} />
               </Route>
               <Route path={'/'} element={<AuthPage />} />

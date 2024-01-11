@@ -1,18 +1,15 @@
 import Exams from 'assets/Images/SideBarImages/exam.png';
 import ExamsActive from 'assets/Images/SideBarImages/exam_active.png';
-import ExamsDark from 'assets/Images/SideBarImages/exam_dark.png';
 // import Home from 'assets/Images/SideBarImages/home.png';
 // import HomeActive from 'assets/Images/SideBarImages/home_active.png';
 // import HomeDark from 'assets/Images/SideBarImages/home_dark.png';
 import Lessons from 'assets/Images/SideBarImages/lessons.png';
 import LessonsActive from 'assets/Images/SideBarImages/lessons_active.png';
-import LessonsDark from 'assets/Images/SideBarImages/lessons_dark.png';
 import YaahLogo from 'assets/Images/SideBarImages/Logo.png';
 import { NavLink } from 'react-router-dom';
-import { ISideBar } from 'types/types.ts';
 import './Sidebar.css';
 
-function Sidebar({ isDark }: ISideBar) {
+function Sidebar() {
   return (
     <div className='sidebar'>
       <div className='sidebar-top'>
@@ -42,11 +39,7 @@ function Sidebar({ isDark }: ISideBar) {
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
                       <img
                         src={
-                          isActive
-                            ? LessonsActive
-                            : isDark
-                            ? Lessons
-                            : LessonsDark
+                          isActive ? LessonsActive : Lessons
                         }
                         alt='lessons'
                         className='sidebar-menu-image'
@@ -60,7 +53,7 @@ function Sidebar({ isDark }: ISideBar) {
                     <div className={`sidebar-link ${isActive ? 'active' : ''}`}>
                       <img
                         src={
-                          isActive ? ExamsActive : isDark ? Exams : ExamsDark
+                          isActive ? ExamsActive : Exams
                         }
                         alt='exams'
                         className='sidebar-menu-image'

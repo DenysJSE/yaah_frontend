@@ -12,4 +12,8 @@ export default class ExamService {
   static async updateIsDoneExamStatus(id: number) {
     return api.put(`/exams/update_is_done/${id}`)
   }
+
+  static async updateCorrectAnswerAmount(examID: number, correctAnswer: number) {
+    return api.put(`exams/update_correct_answer_amount/${examID}/correct_answer_amount/${correctAnswer}`)
+  }
 }

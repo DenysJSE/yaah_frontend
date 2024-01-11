@@ -1,18 +1,19 @@
 // Components Interfaces
 export interface ISubjectTitleDuration {
-  description: string,
-  additionalInfo: string
+  description: string
+}
+
+export interface IDialogMessage {
+  handleCansel: () => void
+  handleDoAction: () => void
+  cancelText: string
+  doActionText: string
+  modalWindowTitle: string
+  modalWindowText: string
 }
 
 // Layouts Interfaces
-export interface IHeader {
-  isDark: boolean;
-  setIsDark: (isDark: boolean) => void;
-}
-
 export interface IProfilePopUp {
-  isDark: boolean;
-  setIsDark: (isDark: boolean) => void;
   setIsProfileVisible: (isProfileVisible: boolean) => void;
 }
 
@@ -65,11 +66,10 @@ export interface IExam {
   }
 }
 
-export interface ExamInterface {
+export interface IExamCard {
   id: number;
   title: string;
   subjectTitle: string;
-  testAward: string;
   isDone: boolean
 }
 
@@ -117,7 +117,6 @@ export interface ILessonCard {
   id: number;
   title: string;
   subjectTitle: string;
-  examsAmount: string;
   isDone: boolean
 }
 
@@ -145,4 +144,26 @@ export interface IUser {
     value: string;
     description: string;
   };
+}
+
+// Subjects Interface
+export interface ISubject {
+  "id": number,
+  "title": string,
+  "description": string,
+  "lessonsNumber": number,
+  "examsNumber": number,
+  "courseDuration": number,
+  "exams": {
+    "ID": number,
+    "title": string,
+    "description": string,
+    "award": number
+  }[],
+  "lessons": {
+    "id": number,
+    "title": string,
+    "award": number,
+    "lessonData": string
+  }[]
 }

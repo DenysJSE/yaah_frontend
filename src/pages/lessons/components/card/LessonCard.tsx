@@ -8,7 +8,6 @@ function LessonCard({
   id,
   title,
   subjectTitle,
-  examsAmount,
   isDone
 }: ILessonCard) {
   return (
@@ -18,10 +17,7 @@ function LessonCard({
           <img src={LessonIcon} alt='examIcon' className='lesson-card-icon' />
           <div className='lesson-additional-info'>
             <h2 className='lesson-card-title'>{title}</h2>
-            <CardAdditionalInfo
-              description={subjectTitle}
-              additionalInfo={examsAmount}
-            />
+            <CardAdditionalInfo description={subjectTitle} />
           </div>
           {isDone && <p className='lesson-card-is-done'>Done</p>}
         </div>

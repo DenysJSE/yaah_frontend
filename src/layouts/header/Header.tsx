@@ -3,10 +3,9 @@ import UserLogo from 'assets/Images/HeaderImages/userlogo.jpg';
 import ProfilePopUp from 'layouts/profile-popup-menu/ProfilePopUp.tsx';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { IHeader } from 'types/types.ts';
 import './Header.css';
 
-function Header({ isDark, setIsDark }: IHeader) {
+function Header() {
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState('');
   const [isProfileVisible, setIsProfileVisible] = useState(false);
@@ -65,8 +64,6 @@ function Header({ isDark, setIsDark }: IHeader) {
               onMouseLeave={handleProfileLeave}
             >
               <ProfilePopUp
-                isDark={isDark}
-                setIsDark={setIsDark}
                 setIsProfileVisible={setIsProfileVisible}
               />
             </div>

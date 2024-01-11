@@ -31,7 +31,7 @@ html {
   background-color: #5c5c5c;
 }
 
-/* Color variables for light mode */
+/* Color variables */
 :root {
   /* Main Colors */
   --app-background-color: #2D2E35;
@@ -78,10 +78,11 @@ html {
 
   --button-disable: #4F5056;
   --button-disable-text-color: #2D2E35;
-}
 
-/* Color variables for dark mode */
-[data-theme="dark"] {
+  --button-modal-cancel: #627fff;
+  --button-modal-logout: #4F5056;
+  --modal-text-color: #ffffff8f;
+  --modal-hr-color: #ffffff8f;
 }
 
 .App {
