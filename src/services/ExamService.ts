@@ -16,4 +16,8 @@ export default class ExamService {
   static async updateCorrectAnswerAmount(examID: number, correctAnswer: number) {
     return api.put(`exams/update_correct_answer_amount/${examID}/correct_answer_amount/${correctAnswer}`)
   }
+
+  static async getExamMark(examID: number) {
+    return api.get(`exams/get_exam_mark/${examID}`)
+  }
 }

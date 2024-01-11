@@ -5,6 +5,7 @@
   padding: 24px;
   min-width: 300px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .exam-card-main-content {
@@ -19,6 +20,17 @@
 
 .exam-card-title {
   font-size: 18px;
+}
+
+.lesson-card-exam-mark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--exam-card-result);
 }
 
 @media (max-width: 500px) {

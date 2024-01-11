@@ -23,6 +23,10 @@
   gap: 12px;
 }
 
+.modal-title {
+  text-align: center;
+}
+
 .modal-content-text {
   text-align: center;
   font-size: 16px;
