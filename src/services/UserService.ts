@@ -16,6 +16,14 @@ export default class UserService {
     return api.get('users/get_user')
   }
 
+  static async checkNicknameExist(nickname: string) {
+    return api.get(`users/check_nickname/${nickname}`)
+  }
+
+  static async checkEmailExist(email: string) {
+    return api.get(`users/check_email/${email}`)
+  }
+
   static async updatePassword({userID, userPassword, newUserPassword}: IUpdatePassword) {
     return api.put('users/update_password', {userID, userPassword, newUserPassword})
   }

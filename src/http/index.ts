@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const API_URL = `https://yaah-backend.onrender.com/api`
+export const API_URL = 'http://localhost:5000/api' //https://yaah-backend.onrender.com/api - deploy / http://localhost:5000/api - local
 
 const api = axios.create({
   withCredentials: true,

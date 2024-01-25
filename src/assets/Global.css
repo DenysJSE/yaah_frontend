@@ -84,6 +84,8 @@ html {
   --button-modal-logout: #4F5056;
   --modal-text-color: #ffffff8f;
   --modal-hr-color: #ffffff8f;
+
+  --exist-nickname-text-color: #FF3333;
 }
 
 .App {

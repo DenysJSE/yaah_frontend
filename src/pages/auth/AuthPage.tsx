@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Auth.css';
+import UserService from 'services/UserService.ts';
 import { loginUser, registerUser } from 'store/user/UserActions.ts';
 import { setIsAuthenticated, setUser } from 'store/user/UserSlice.ts';
 
@@ -13,20 +14,30 @@ function AuthPage() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState(' ');
-  const [nickname, setNickname] = useState(' ');
+  const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState(' ');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [nicknameError, setNicknameError] = useState('');
   const [authMode, setAuthMode] = useState('login');
+  const [existNickname, setExistNickname] = useState(false);
+  const [existEmail, setExistEmail] = useState(false);
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+  const handleEmailChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredEmail = event.target.value
+    setEmail(enteredEmail);
 
     if (!/^\S+@\S+\.\S+$/.test(event.target.value)) {
       setEmailError('Please enter a valid email address.');
     } else {
       setEmailError('');
+    }
+
+    const response = await UserService.checkEmailExist(enteredEmail)
+    if (response.data) {
+      setExistEmail(true)
+    } else {
+      setExistEmail(false)
     }
   };
 
@@ -40,13 +51,20 @@ function AuthPage() {
     }
   };
 
-  const handleNicknameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(event.target.value);
+  const handleNicknameChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredNickname = event.target.value
+    setNickname(enteredNickname);
 
     if (event.target.value.length < 3) {
       setNicknameError('Nickname must be at least 3 characters.');
     } else {
       setNicknameError('');
+      const response = await UserService.checkNicknameExist(enteredNickname)
+      if (response.data) {
+        setExistNickname(true)
+      } else {
+        setExistNickname(false)
+      }
     }
   };
 
@@ -118,6 +136,8 @@ function AuthPage() {
           handlePasswordChange={handlePasswordChange}
           handleNicknameChange={handleNicknameChange}
           handleSubmit={handleSubmit}
+          existNickname={existNickname}
+          existEmail={existEmail}
         />
       )}
     </div>

@@ -35,6 +35,8 @@ export interface IRegistrationForm {
   handlePasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleNicknameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  existNickname: boolean
+  existEmail: boolean
 }
 
 // Exams Page Interfaces
